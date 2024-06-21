@@ -1,7 +1,6 @@
 import type { Config } from 'tailwindcss';
 
 const config = {
-  darkMode: ['class'],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -19,6 +18,14 @@ const config = {
       },
     },
     extend: {
+      boxShadow: {
+        'custom-lg':
+          '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1), 0 0 0 0 rgb(0 0 0 / 0) inset',
+      },
+      backgroundImage: {
+        'background-gradient':
+          'linear-gradient(to bottom, #051937, #06162f, #071227, #060e1f, #020817)',
+      },
       lineHeight: {
         '12': '3.6em',
       },
@@ -28,6 +35,9 @@ const config = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        navbar: '#051937',
+        h1custom: '#F2F2F2',
+        h1underline: '#003054',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -58,9 +68,10 @@ const config = {
         },
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
+        none: '0',
         sm: 'calc(var(--radius) - 4px)',
+        md: '0.375rem',
+        lg: '0.5rem',
       },
       keyframes: {
         'accordion-down': {

@@ -1,12 +1,11 @@
 'use client';
 import Image from 'next/image';
-import { ModeToggle } from './ui/toggle-mode';
 
-export default function Nav() {
+const Nav = () => {
   return (
     <header>
-      <nav>
-        <ul className="flex items-center justify-between">
+      <nav className="p-1 bg-gradient-to-b from-[#0a2855] from-10% to-[#051937] to-100% rounded-lg">
+        <ul className="flex items-center justify-between ">
           <li>
             <a
               className="pointer-events-none flex place-items-center gap-2 p-4"
@@ -17,18 +16,18 @@ export default function Nav() {
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
-                className="dark:invert"
+                className="invert"
                 width={100}
                 height={24}
                 priority
               />
             </a>
           </li>
-          <li>
-            <ModeToggle />
-          </li>
+          <li></li>
         </ul>
       </nav>
     </header>
   );
-}
+};
+
+export default Nav;
