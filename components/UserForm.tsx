@@ -41,7 +41,7 @@ export default function ProfileForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 border-muted border-2 p-8 rounded-lg"
+        className="space-y-8 p-8 rounded-lg"
       >
         <FormField
           control={form.control}
@@ -71,7 +71,24 @@ export default function ProfileForm() {
             </FormItem>
           )}
         />
+        <div className="flex justify-center gap-4">
+          <Button className="shadow-custom-md hover:shadow-custom-lg">
+            Learn more
+          </Button>
+          <Button className="bg-gradient-to-r from-sky-400 to-blue-500 shadow-custom-md hover:shadow-custom-lg">
+            Enroll Now
+          </Button>
+        </div>
       </form>
     </Form>
   );
 }
+
+/*
+<div className="flex justify-center gap-4">
+                        <Button variant={'secondary'}>Learn more</Button>
+                        <Button className="bg-gradient-to-r from-sky-400 to-blue-500">
+                          Enroll Now
+                        </Button>
+                      </div>
+*/

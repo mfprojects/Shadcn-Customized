@@ -21,15 +21,21 @@ const config = {
       boxShadow: {
         'custom-lg':
           '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1), 0 0 0 0 rgb(0 0 0 / 0) inset',
+        'custom-md':
+          '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
       },
       backgroundImage: {
         'background-gradient':
-          'linear-gradient(to bottom, #051937, #06162f, #071227, #060e1f, #020817)',
+          'linear-gradient(to top, #051937, #06162f, #071227, #060e1f, #020817)',
+        'background-gradient-component':
+          'linear-gradient(to top, #020817, #0b1529, #0f1f3c, #13284f, #193264)',
       },
       lineHeight: {
         '12': '3.6em',
       },
       colors: {
+        mainColor: '#020817',
+        componentColor: '#465373',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
