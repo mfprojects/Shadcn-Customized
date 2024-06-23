@@ -49,10 +49,10 @@ export default function ProfileForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="font-bold">Name</FormLabel>
-              <FormControl>
+              <FormControl className="">
                 <Input placeholder="Username" {...field} />
               </FormControl>
-              <FormDescription>This is your display name</FormDescription>
+
               <FormMessage />
             </FormItem>
           )}
@@ -66,16 +66,16 @@ export default function ProfileForm() {
               <FormControl>
                 <Input placeholder="Email" {...field} />
               </FormControl>
-              <FormDescription>This is your email</FormDescription>
+
               <FormMessage />
             </FormItem>
           )}
         />
-        <div className="flex justify-center gap-4">
-          <Button className="shadow-custom-md hover:shadow-custom-lg">
-            Learn more
-          </Button>
-          <Button className="bg-gradient-to-r from-sky-400 to-blue-500 shadow-custom-md hover:shadow-custom-lg">
+        <div className="flex justify-center gap-4 pt-8">
+          <Button
+            size="lg"
+            className="shadow-lg shadow-blue-400/50 bg-gradient-to-r from-sky-400 to-blue-500"
+          >
             Enroll Now
           </Button>
         </div>
