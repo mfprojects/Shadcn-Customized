@@ -8,7 +8,7 @@ import PopOutHeading from '../components/PopOutHeading';
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen p-0 lg:p-8 bg-mainColor">
+    <main className="flex flex-col min-h-screen p-0 sm:px-4 sm:pt-4 bg-mainColor">
       <Nav />
       <div className="flex flex-col justify-evenly min-h-screen shadow-indigo-500/50 shadow-custom-lg p-4">
         <section className=" pt-4 mt-4 sm:pt-0 sm:mt-6 md:pt-0 md:mt-4 lg:mt-2 pb-12 flex flex-col justify-center items-center text-center gap-8">
@@ -18,13 +18,13 @@ export default function Home() {
           </h1>
         </section>
 
-        <div className="flex flex-wrap justify-evenly content-center gap-4 sm:gap-4 pt-12 mt-4  ">
-          <div className="flex-1 flex flex-col items-start sm:justify-center p-4 rounded-lg bg-background-gradient-component-small sm:bg-background-gradient-component">
-            <h2 className="text-3xl text-center self-center px-4 bg-clip-text text-transparent p-3 bg-gradient-to-b from-indigo-100 to-indigo-500 ">
+        <div className=" flex flex-wrap justify-evenly content-center gap-4 sm:gap-4 pt-12 mt-4  ">
+          <div className="flex-0 w-full sm:w-auto sm:flex-1 flex flex-col items-start sm:justify-center p-4 px-4 rounded-lg bg-background-gradient-component-small sm:bg-background-gradient-component">
+            <h2 className="text-3xl text-center self-center pb-8 bg-clip-text text-transparent py-3 bg-gradient-to-b from-indigo-100 to-indigo-500 ">
               Useful Popups
             </h2>
 
-            <div className="flex-1 flex justify-center items-end w-full gap-4 py-12 xsplus:py-8 sm:py-8">
+            <div className="flex-1 flex justify-center items-end w-full gap-4 pb-8 xsplus:py-8 sm:pb-8">
               <Button
                 size="lg"
                 className="shadow-lg shadow-slate-300/50 bg-gradient-to-tr from-slate-300 to-slate-500  "
