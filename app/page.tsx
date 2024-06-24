@@ -27,7 +27,7 @@ export default function Home() {
             <div className="flex-1 flex justify-center items-end w-full gap-4 pb-8 xsplus:py-8 sm:pb-8">
               <Button
                 size="lg"
-                className="shadow-lg shadow-slate-300/50 bg-gradient-to-tr from-slate-300 to-slate-500  "
+                className="shadow-md shadow-slate-300/50 bg-gradient-to-tr from-slate-300 to-slate-500  "
               >
                 Learn more
               </Button>
@@ -40,25 +40,26 @@ export default function Home() {
             <UserForm />
           </div>
         </div>
-
-        <div className="flex justify-evenly flex-wrap gap-8 mb-16 mt-0 collapse">
-          <div className="flex-grow flex-shrink-0 basis-full md:basis-1/3 min-h-[200px] flex items-center justify-center">
-            <PopOutHeading>This changes size</PopOutHeading>
-          </div>
-          <div className="flex-grow flex-shrink-0 basis-full md:basis-1/3 min-h-[200px] flex items-center justify-center">
-            <PopOutHeading>This one too</PopOutHeading>
-          </div>
-        </div>
-        <div className="flex justify-evenly flex-wrap gap-8 mb-16 mt-0 collapse">
-          <div className="flex-grow flex-shrink-0 basis-full md:basis-1/3 min-h-[200px] flex items-center justify-center">
-            <PopOutHeading>This changes size</PopOutHeading>
-          </div>
-          <div className="flex-grow flex-shrink-0 basis-full md:basis-1/3 min-h-[200px] flex items-center justify-center">
-            <PopOutHeading>This one too</PopOutHeading>
-          </div>
-        </div>
       </div>
       <Footer />
     </main>
   );
 }
+/*
+<div className="flex justify-evenly flex-wrap gap-8 mb-16 mt-0 collapse">
+<div className="flex-grow flex-shrink-0 basis-full md:basis-1/3 min-h-[200px] flex items-center justify-center">
+  <PopOutHeading>This changes size</PopOutHeading>
+</div>
+<div className="flex-grow flex-shrink-0 basis-full md:basis-1/3 min-h-[200px] flex items-center justify-center">
+  <PopOutHeading>This one too</PopOutHeading>
+</div>
+</div>
+<div className="flex justify-evenly flex-wrap gap-8 mb-16 mt-0 collapse">
+<div className="flex-grow flex-shrink-0 basis-full md:basis-1/3 min-h-[200px] flex items-center justify-center">
+  <PopOutHeading>This changes size</PopOutHeading>
+</div>
+<div className="flex-grow flex-shrink-0 basis-full md:basis-1/3 min-h-[200px] flex items-center justify-center">
+  <PopOutHeading>This one too</PopOutHeading>
+</div>
+</div>
+*/

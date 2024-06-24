@@ -74,7 +74,7 @@ export default function ProfileForm() {
         <div className="flex justify-center gap-4 pt-8">
           <Button
             size="lg"
-            className="shadow-lg shadow-blue-400/50 bg-gradient-to-r from-sky-400 to-blue-500"
+            className="shadow-md shadow-blue-400/50 bg-gradient-to-r from-sky-400 to-blue-500"
           >
             Create Account
           </Button>
