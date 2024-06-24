@@ -13,11 +13,15 @@ const config = {
       center: true,
       padding: '2rem',
       screens: {
+        xsplus: '486px',
         '2xl': '100px',
         lg: '1024px',
       },
     },
     extend: {
+      padding: {
+        'xsplus:py-8': 'padding-bottom: 2em, padding-top: 2em',
+      },
       boxShadow: {
         'custom-lg':
           '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1), 0 0 0 0 rgb(0 0 0 / 0) inset',

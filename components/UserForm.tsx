@@ -2,8 +2,8 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-
 import { Button } from '@/components/ui/button';
+
 import {
   Form,
   FormControl,
@@ -17,8 +17,8 @@ import { Input } from '@/components/ui/input';
 import { useForm } from 'react-hook-form';
 
 const formSchema = z.object({
-  username: z.string().min(5, {
-    message: 'Username must be at least 5 characters.',
+  displayname: z.string().min(5, {
+    message: 'Display Name must be at least 5 characters.',
   }),
   email: z
     .string()
@@ -45,12 +45,12 @@ export default function ProfileForm() {
       >
         <FormField
           control={form.control}
-          name="username"
+          name="displayname"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-bold">Name</FormLabel>
+              <FormLabel className="font-bold">Display Name</FormLabel>
               <FormControl className="">
-                <Input placeholder="Username" {...field} />
+                <Input placeholder="Display Name" {...field} />
               </FormControl>
 
               <FormMessage />
@@ -76,7 +76,7 @@ export default function ProfileForm() {
             size="lg"
             className="shadow-lg shadow-blue-400/50 bg-gradient-to-r from-sky-400 to-blue-500"
           >
-            Enroll Now
+            Create Account
           </Button>
         </div>
       </form>
