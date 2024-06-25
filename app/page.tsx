@@ -3,27 +3,30 @@ import Nav from '../components/Nav';
 import UserForm from '../components/UserForm';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
+import { CarouselBox } from '@/components/CarouselBox';
 
 import PopOutHeading from '../components/PopOutHeading';
+import { CarouselDApiDemo } from '@/components/CarouselApiDemo';
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen p-0 sm:px-4 sm:pt-4 bg-mainColor">
+    <main className="flex flex-col min-h-screen p-0 sm:px-4 sm:pt-2 bg-mainColor">
       <Nav />
-      <div className="flex flex-col justify-evenly min-h-screen shadow-indigo-500/50 shadow-custom-lg p-4">
-        <section className=" pt-4 mt-4 sm:pt-0 sm:mt-6 md:pt-0 md:mt-4 lg:mt-2 pb-12 flex flex-col justify-center items-center text-center gap-8">
-          <h1 className="bg-gradient-to-b from-indigo-100 to-indigo-400 bg-clip-text text-transparent text-6xl sm:text-6xl font-medium leading:10 lg:leading-normal ">
-            <a className="underline decoration-h1underline">Comp</a>
-            <a className="underline decoration-blue-500">Lib</a>
-          </h1>
-        </section>
-
-        <div className=" flex flex-wrap justify-evenly content-center gap-4 sm:gap-4 pt-12 mt-4  ">
+      <section className=" pt-4 mt-4 sm:pt-0 sm:mt-6 md:pt-0 md:mt-4 lg:mt-2 pb-12 flex flex-col justify-center items-center text-center gap-8">
+        <h1 className="bg-gradient-to-b from-indigo-100 to-indigo-400 bg-clip-text text-transparent text-6xl sm:text-6xl font-medium leading:10 lg:leading-normal ">
+          <a className="underline decoration-h1underline">Comp</a>
+          <a className="underline decoration-blue-500">Lib</a>
+        </h1>
+      </section>
+      <div className="flex flex-row min-h-fit justify-between md:justify-center  shadow-indigo-500/50 shadow-custom-lg p-4">
+        <div className=" flex flex-wrap xl:flex-row w-max md:w-4/5 justify-center content-center xl:content-end gap-4 sm:gap-4 pt-12 pb-12">
           <div className="flex-0 w-full sm:w-auto sm:flex-1 flex flex-col items-start sm:justify-center p-4 px-4 rounded-lg bg-background-gradient-component-small sm:bg-background-gradient-component">
             <h2 className="text-3xl text-center self-center pb-8 bg-clip-text text-transparent py-3 bg-gradient-to-b from-indigo-100 to-indigo-500 ">
-              Useful Popups
+              Content Carousel
             </h2>
-
+            <div className="flex-1 flex justify-center items-center w-full gap-4 pb-8 xsplus:py-8 sm:pb-8">
+              <CarouselDApiDemo />
+            </div>
             <div className="flex-1 flex justify-center items-end w-full gap-4 pb-8 xsplus:py-8 sm:pb-8">
               <Button
                 size="lg"
@@ -33,6 +36,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
+
           <div className="flex-1 flex-col items-end content-center p-4 rounded-lg bg-background-gradient-component-reverse-small sm:bg-background-gradient-component-reverse">
             <h2 className="text-3xl text-center self-center px-4 bg-clip-text text-transparent p-3 bg-gradient-to-b from-indigo-100 to-indigo-500 ">
               Form Component with easy handling

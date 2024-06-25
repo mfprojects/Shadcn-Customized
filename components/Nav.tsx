@@ -8,7 +8,7 @@ const Nav = () => {
         <ul className="flex items-center justify-between ">
           <li>
             <a
-              className="pointer-events-none flex place-items-center gap-2 p-4"
+              className="pointer-events-none flex place-items-center gap-2 p-2"
               href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
               target="_blank"
               rel="noopener noreferrer"
@@ -17,8 +17,8 @@ const Nav = () => {
                 src="/vercel.svg"
                 alt="Vercel Logo"
                 className="invert"
-                width={100}
-                height={24}
+                width={70}
+                height={100}
                 priority
               />
             </a>
