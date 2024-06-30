@@ -33,7 +33,7 @@ export function CarouselDApiDemo() {
   return (
     <div className="">
       <div className="flex-auto mb-8">
-        <h2 className="flex-auto pt-8 text-2xl font-light  text-wrap text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent">
+        <h2 className="flex-auto pt-8 text-xl font-light leading-7 text-indigo-300 opacity-80 hover:opacity-100 text-wrap text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent">
           Family Photos
         </h2>
       </div>
@@ -52,7 +52,7 @@ export function CarouselDApiDemo() {
             ].map((src, index) => (
               <CarouselItem className="" key={index}>
                 <Card className="my-3 mx-3">
-                  <CardContent className="flex aspect-auto max-h-600 items-center justify-center p-0 overflow-hidden">
+                  <CardContent className="flex aspect-auto max-h-96 xl:max-h-600 items-center justify-center p-0 overflow-hidden">
                     <Image
                       src={src}
                       alt={`Family photo ${index + 1}`}

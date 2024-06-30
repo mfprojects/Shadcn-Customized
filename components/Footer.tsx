@@ -2,52 +2,41 @@
 import Image from 'next/image';
 const Footer = () => {
   return (
-    <footer className=" mt-8 lg:rounded-lg shadow bg-gray-900">
+    <footer className="xl3:rounded-lg shadow bg-gray-900">
       <div className="w-full mx-auto p-4 md:py-8">
         <div className="justify-between sm:flex sm:items-center sm:justify-between">
-          <a
-            href="https://flowbite.com/"
-            className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
-          >
-            <Image
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8"
-              alt="Flowbite Logo"
-              width={30}
-              height={100}
-            />
-            <span className="self-center text-2xl font-semibold  text-slate-300">
-              Footer
+          <a className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+            <span className="self-center text-1xl font-semibold  text-slate-300">
+              Every page needs a footer
             </span>
           </a>
           <ul className="flex flex-wrap items-center mb.6 text-sm font-medium sm:mb-0 text-slate-400">
             <li>
               <a href="#" className="hover:underline me-4 md:me-6">
-                About
+                How
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline me-4 md:me-6">
-                Privacy
+                Are
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline me-4 md:me-6">
-                Licensing
+                You
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Contact
+                Today
               </a>
             </li>
           </ul>
         </div>
         <hr className="my-6 sm:mx:auto border-slate-700 lg:my-8" />
         <span className="text-sm text-center text-slate-400">
-          <a className="block text-sm text-slate-400 text-center">© 2024</a>
-          <a href="https://flowbite.com/" className="hover:underline"></a>
           <a className="block hover:underline text-center">Not Too Bad</a>
+          <a className="block text-sm text-slate-400 text-center">© 2024</a>
         </span>
       </div>
     </footer>
