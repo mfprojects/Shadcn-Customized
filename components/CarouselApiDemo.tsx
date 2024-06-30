@@ -29,7 +29,6 @@ export function CarouselDApiDemo() {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
-
   return (
     <div className="">
       <div className="flex-auto mb-8">
@@ -40,7 +39,7 @@ export function CarouselDApiDemo() {
       <div className="flex justify-center w-full">
         <Carousel
           setApi={setApi}
-          className="w-full max-w-sm sm:max-w-md xl:max-w-xl"
+          className="w-full max-w-sm sm:max-w-lg xl:max-w-xl"
         >
           <CarouselContent className="">
             {[
@@ -52,12 +51,12 @@ export function CarouselDApiDemo() {
             ].map((src, index) => (
               <CarouselItem className="" key={index}>
                 <Card className="my-3 mx-3">
-                  <CardContent className="flex aspect-auto max-h-96 xl:max-h-600 items-center justify-center p-0 overflow-hidden">
+                  <CardContent className="flex aspect-auto max-h-96  items-center justify-center p-0 overflow-hidden">
                     <Image
                       src={src}
                       alt={`Family photo ${index + 1}`}
-                      width={800}
-                      height={800}
+                      width={600}
+                      height={600}
                       style={{ objectFit: 'contain' }}
                     />
                   </CardContent>
@@ -67,11 +66,11 @@ export function CarouselDApiDemo() {
           </CarouselContent>
 
           <div className="flex flex-row justify-between mb-10">
-            <CarouselPrevious className="flex relative ml-3 lg:ml-14 lg:mt-3 xl:ml-0 xl:mt-0 xl:absolute" />
+            <CarouselPrevious className="flex relative ml-3 lg:ml-14 lg:mt-3 2xl:absolute 2xl:top-1/2 2xl:-left-20" />
             <div className="py-2 flex-1 text-center text-sm text-muted-foreground">
               Slide {current} of {count}
             </div>
-            <CarouselNext className="flex relative mr-3 lg:mr-14 lg:mt-3 xl:mr-0 xl:mt-0 xl:absolute" />
+            <CarouselNext className="flex relative mr-3 lg:mr-14 lg:mt-3 2xl:absolute 2xl:top-1/2 2xl:-right-20" />
           </div>
         </Carousel>
       </div>
