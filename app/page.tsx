@@ -10,7 +10,7 @@ import { CarouselDApiDemo } from '@/components/CarouselApiDemo';
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen w-screen max-w-screen-2xl p-0 sm:px-4 sm:pt-2 mx-auto bg-indigo-100">
+    <main className="flex flex-col min-h-screen w-screen max-w-screen-2xl px-0 sm:px-4 py-2  xs:p-4 mx-auto bg-indigo-100">
       <Nav />
       <section className=" pt-4 pb-6 mt-4 sm:pt-4 sm:mt-6 md:pt-4 md:mt-4 lg:mt-2 flex flex-col justify-center items-center text-center gap-8 bg-gradient-to-b from-[#0a2855] from-10% to-[#051937] to-100% rounded-t-lg ">
         <h1 className="bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent text-6xl sm:text-6xl font-medium leading:loose lg:leading-loose ">
@@ -37,7 +37,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-1 flex-col  content-center rounded-lg bg-background-gradient-component-reverse-small sm:bg-background-gradient-component-reverse">
+          <div className="flex-1 flex-col content-center justify-between rounded-lg bg-background-gradient-component-reverse-small sm:bg-background-gradient-component-reverse">
             <h2 className="text-3xl text-center px-4 bg-clip-text text-transparent p-3 bg-gradient-to-b from-indigo-100 to-indigo-500 ">
               Form Component with easy handling
             </h2>

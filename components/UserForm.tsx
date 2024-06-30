@@ -38,11 +38,11 @@ export default function ProfileForm() {
   }
 
   return (
-    <div className="h-full">
+    <div className="flex flex-row justify-center min-w-max h-full">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-8 p-8 rounded-lg"
+          className="flex-1 flex flex-col justify-between space-y-8 p-8 rounded-lg"
         >
           <FormField
             control={form.control}
@@ -72,7 +72,8 @@ export default function ProfileForm() {
               </FormItem>
             )}
           />
-          <div className="flex justify-center gap-4 pt-8">
+
+          <div className="flex-1 flex justify-center gap-4 pb-8">
             <Button
               size="lg"
               className="shadow-blue-400/50 bg-gradient-to-r from-sky-400 to-blue-500"
