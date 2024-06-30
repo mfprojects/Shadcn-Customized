@@ -9,16 +9,24 @@ const config = {
   ],
   prefix: '',
   theme: {
+    screens: {
+      xsplus: '486px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+      '3xl': '2048px',
+    },
     container: {
       center: true,
       padding: '2rem',
-      screens: {
-        xsplus: '486px',
-        '2xl': '100px',
-        lg: '1024px',
-      },
     },
     extend: {
+      maxHeight: {
+        '600': '37.5rem',
+        '800': '50rem',
+      },
       padding: {
         'xsplus:py-8': 'padding-bottom: 2em, padding-top: 2em',
       },
@@ -32,6 +40,8 @@ const config = {
           '0 -10px 15px -3px rgba(0, 0, 0, 0.1), 0 0px 0px 0px rgba(0, 0, 0, 0.05)',
         't-md':
           '0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        highlight: '0 0 15px rgba(129, 140, 248, 0.5)',
+        highlight2: '0 0 15px rgba(20, 66, 114, 0.5)',
       },
       backgroundImage: {
         'background-gradient':
@@ -44,12 +54,16 @@ const config = {
           'linear-gradient(to bottom, #0b1529, #0b1529, #0f1f3c, #13284f, #193264)',
         'background-gradient-component-reverse-small':
           'linear-gradient(to bottom, #020817, #0b1529, #0f1f3c, #13284f, #193264)',
+        backgradient:
+          'linear-gradient(to top, #020817, #081124, #081832, #071e40, #06244f, #062552, #052755, #052858, #052450, #052148, #051d40, #051a38)',
       },
       lineHeight: {
         '12': '3.6em',
       },
       colors: {
         mainColor: '#020817',
+        textColor: '#bae4fd',
+        borderColor: '#7A6BF2',
         componentColor: '#465373',
         navColorLight: '#072C63',
         border: 'hsl(var(--border))',
