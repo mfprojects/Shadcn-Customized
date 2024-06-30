@@ -30,12 +30,12 @@ export function CarouselDApiDemo() {
   }, [api]);
 
   return (
-    <div>
-      <Carousel setApi={setApi} className="w-full max-w-xs">
-        <CarouselContent>
+    <div className="">
+      <Carousel setApi={setApi} className="w-full">
+        <CarouselContent className="max-w-xs">
           {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index}>
-              <Card>
+            <CarouselItem className="" key={index}>
+              <Card className="m-3">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
                   <span className="text-4xl font-semibold">{index + 1}</span>
                 </CardContent>
@@ -43,12 +43,14 @@ export function CarouselDApiDemo() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <div className="flex flex-row justify-between">
+          <CarouselPrevious className="flex relative ml-3 lg:mr-0 lg:absolute" />
+          <div className="py-2 flex-1 text-center text-sm text-muted-foreground">
+            Slide {current} of {count}
+          </div>
+          <CarouselNext className="flex relative mr-3 lg:mr-0 lg:absolute" />
+        </div>
       </Carousel>
-      <div className="py-2 text-center text-sm text-muted-foreground">
-        Slide {current} of {count}
-      </div>
     </div>
   );
 }

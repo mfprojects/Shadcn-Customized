@@ -59,7 +59,7 @@ const config = {
         foreground: 'hsl(var(--foreground))',
         navbar: '#051937',
         h1custom: '#F2F2F2',
-        h1underline: '#003054',
+        h1underline: '#38B5F8',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',

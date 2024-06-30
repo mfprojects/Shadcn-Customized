@@ -17,7 +17,7 @@ const Footer = () => {
               height={100}
             />
             <span className="self-center text-2xl font-semibold  text-slate-300">
-              Flowbite
+              Footer
             </span>
           </a>
           <ul className="flex flex-wrap items-center mb.6 text-sm font-medium sm:mb-0 text-slate-400">
@@ -47,9 +47,7 @@ const Footer = () => {
         <span className="text-sm text-center text-slate-400">
           <a className="block text-sm text-slate-400 text-center">© 2024</a>
           <a href="https://flowbite.com/" className="hover:underline"></a>
-          <a className="block hover:underline text-center">
-            Based on Flowbite design, not too bad
-          </a>
+          <a className="block hover:underline text-center">Not Too Bad</a>
         </span>
       </div>
     </footer>

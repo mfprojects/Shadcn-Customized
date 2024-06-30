@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Nav = () => {
   return (
     <header>
-      <nav className="p-1 bg-gradient-to-b from-[#0a2855] from-10% to-[#051937] to-100% rounded-lg shadow-navColorLight/30 shadow-t-lg">
+      <nav className="p-2 bg-gradient-to-b from-[#0a2855] from-10% to-[#051937] to-100% rounded-lg shadow-navColorLight/50 shadow-t-lg">
         <ul className="flex items-center justify-between ">
           <li>
             <a

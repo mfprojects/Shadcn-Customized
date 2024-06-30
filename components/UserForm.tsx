@@ -1,5 +1,5 @@
 'use client';
-
+import * as React from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
@@ -38,49 +38,51 @@ export default function ProfileForm() {
   }
 
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 p-8 rounded-lg"
-      >
-        <FormField
-          control={form.control}
-          name="displayname"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="font-bold">Display Name</FormLabel>
-              <FormControl className="">
-                <Input placeholder="Display Name" {...field} />
-              </FormControl>
+    <div className="h-full">
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-8 p-8 rounded-lg"
+        >
+          <FormField
+            control={form.control}
+            name="displayname"
+            render={({ field }) => (
+              <FormItem className="">
+                <FormLabel className="font-bold">Display Name</FormLabel>
+                <FormControl className="">
+                  <Input placeholder="Display Name" {...field} />
+                </FormControl>
 
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="font-bold">Email</FormLabel>
-              <FormControl>
-                <Input placeholder="Email" {...field} />
-              </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="font-bold">Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="Email" {...field} />
+                </FormControl>
 
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <div className="flex justify-center gap-4 pt-8">
-          <Button
-            size="lg"
-            className="shadow-md shadow-blue-400/50 bg-gradient-to-r from-sky-400 to-blue-500"
-          >
-            Create Account
-          </Button>
-        </div>
-      </form>
-    </Form>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className="flex justify-center gap-4 pt-8">
+            <Button
+              size="lg"
+              className="shadow-blue-400/50 bg-gradient-to-r from-sky-400 to-blue-500"
+            >
+              Create Account
+            </Button>
+          </div>
+        </form>
+      </Form>
+    </div>
   );
 }
 
