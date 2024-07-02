@@ -2,7 +2,7 @@
 import ArchiText from '@/components/ArchiText';
 import UserForm from '../../components/UserForm';
 import { CarouselDApiDemo } from '@/components/CarouselApiDemo';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { Card } from '@/components/ui/card';
 
 export default function CustomComponents() {

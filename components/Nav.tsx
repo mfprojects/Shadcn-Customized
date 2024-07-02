@@ -14,12 +14,12 @@ const Nav = () => {
       <nav className="bg-gradient-to-b from-[#0a2855] from-10% to-[#051937] to-100% shadow-navColorLight/50 shadow-md">
         <div className="max-w-screen-3xl mx-auto px-4 sm:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-start cursor-pointer ">
+            <a href="/">
               <h1 className="bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent text-2xl subpixel-antialiased font-light">
-                <a className="underline decoration-h1underline">Com</a>
-                <a className="underline decoration-blue-500">pLib</a>
+                <span className="underline decoration-h1underline">Com</span>
+                <span className="underline decoration-blue-500">pLib</span>
               </h1>
-            </div>
+            </a>
             <div className="hidden lg:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <Link

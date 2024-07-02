@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,

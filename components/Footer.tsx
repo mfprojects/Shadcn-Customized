@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 const Footer = () => {
   return (
     <footer className="xl3:rounded-lg shadow bg-gray-900">
