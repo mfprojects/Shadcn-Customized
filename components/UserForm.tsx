@@ -80,7 +80,7 @@ export default function ProfileForm() {
             <Button
               type="submit"
               size="lg"
-              className="justify-center shadow-md shadow-slate-300/25 bg-gradient-to-tr from-textColor to-slate-500"
+              className="justify-center shadow-md shadow-color10/30 bg-color10"
             >
               Create Account
             </Button>

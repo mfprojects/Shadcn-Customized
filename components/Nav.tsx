@@ -24,19 +24,19 @@ const Nav = () => {
               <div className="ml-10 flex items-baseline space-x-4">
                 <Link
                   href="/"
-                  className="text-white hover:bg-indigo-400 px-3 py-2 rounded-md"
+                  className="text-color10 hover:bg-color10 px-3 py-2 rounded-md"
                 >
                   Home
                 </Link>
                 <Link
                   href="/customComponents"
-                  className="text-white hover:bg-indigo-400 px-3 py-2 rounded-md"
+                  className="text-color10 hover:bg-color10 px-3 py-2 rounded-md"
                 >
                   Components
                 </Link>
                 <Link
                   href="/about"
-                  className="text-white hover:bg-indigo-400 px-3 py-2 rounded-md"
+                  className="text-color10 hover:bg-color10 px-3 py-2 rounded-md"
                 >
                   About
                 </Link>

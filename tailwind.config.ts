@@ -61,6 +61,9 @@ const config = {
         '12': '3.6em',
       },
       colors: {
+        color60: '#061B3A',
+        color30: '#39B4F8',
+        color10: '#A756F7',
         mainColor: '#020817',
         textColor: '#bae4fd',
         borderColor: '#7A6BF2',

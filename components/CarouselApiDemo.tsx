@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
@@ -77,7 +77,7 @@ export function CarouselDApiDemo() {
       <div className="flex-1 flex items-center justify-center w-full gap-4">
         <Button
           size="lg"
-          className="justify-center shadow-md shadow-slate-300/25 bg-gradient-to-tr from-textColor to-slate-500"
+          className="justify-center shadow-md shadow-color10/30 bg-color10"
         >
           Upload
         </Button>
