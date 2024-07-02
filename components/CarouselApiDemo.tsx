@@ -32,14 +32,14 @@ export function CarouselDApiDemo() {
   return (
     <div className="">
       <div className="flex-auto mb-8">
-        <h2 className="flex-auto pt-8 text-xl font-light leading-7 text-indigo-300 opacity-80 hover:opacity-100 text-wrap text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent">
-          Family Photos
+        <h2 className="flex-auto pt-8 text-2xl font-light leading-7 tracking-wide text-indigo-100 opacity-80 hover:opacity-100 text-wrap text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent">
+          City of Athens
         </h2>
       </div>
       <div className="flex justify-center w-full">
         <Carousel
           setApi={setApi}
-          className="w-full max-w-sm sm:max-w-lg xl:max-w-xl"
+          className="w-full max-w-sm md:max-w-lg lg:max-w-md xl:max-w-xl"
         >
           <CarouselContent className="">
             {[
@@ -54,7 +54,7 @@ export function CarouselDApiDemo() {
                   <CardContent className="flex aspect-auto max-h-96  items-center justify-center p-0 overflow-hidden">
                     <Image
                       src={src}
-                      alt={`Family photo ${index + 1}`}
+                      alt={`The city of Athens ${index + 1}`}
                       width={600}
                       height={600}
                       style={{ objectFit: 'contain' }}

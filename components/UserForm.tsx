@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -38,51 +37,48 @@ export default function ProfileForm() {
   }
 
   return (
-    <div className="flex flex-col h-full w-full">
-      <div className="relative h-32 sm:h-32 md:h-44 lg:h-24 mx-8 ">
-        <h2 className="absolute inset-x-0 text-2xl font-light text-wrap text-center px-4 pb-8 pt-8 sm:pb-0 bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent">
-          Create your account
-        </h2>
-      </div>
+    <div className="flex flex-col h-full w-full p-4 lg:p-6">
+      <h2 className="ext-2xl font-light leading-tight tracking-wide text-indigo-100 opacity-80 hover:opacity-100 text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent mb-6 lg:mb-8">
+        Create your account
+      </h2>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-col flex-grow justify-between space-y-8 pb-8 pt-0 mx-3 rounded-lg"
+          className="flex flex-col space-y-6 lg:space-y-8"
         >
-          <div className="flex-auto flex flex-col space-y-8 px-8 mb-8 lg:mb-0 rounded-lg justify-center items-center lg:gap-2">
-            <div className="w-full max-w-md">
-              <FormField
-                control={form.control}
-                name="displayname"
-                render={({ field }) => (
-                  <FormItem className="">
-                    <FormLabel className="font-bold">Display Name</FormLabel>
-                    <FormControl className="">
-                      <Input placeholder="Display Name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="w-full max-w-md">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="font-bold">Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-          </div>
-          <div className="flex justify-center mt-8">
+          <FormField
+            control={form.control}
+            name="displayname"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="font-bold text-indigo-100">
+                  Display Name
+                </FormLabel>
+                <FormControl>
+                  <Input placeholder="Display Name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="font-bold text-indigo-100">
+                  Email
+                </FormLabel>
+                <FormControl>
+                  <Input placeholder="Email" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className="flex justify-center mt-4 lg:mt-6">
             <Button
+              type="submit"
               size="lg"
               className="justify-center shadow-md shadow-slate-300/25 bg-gradient-to-tr from-textColor to-slate-500"
             >
@@ -94,12 +90,3 @@ export default function ProfileForm() {
     </div>
   );
 }
-
-/*
-<div className="flex justify-center gap-4">
-                        <Button variant={'secondary'}>Learn more</Button>
-                        <Button className="bg-gradient-to-r from-sky-400 to-blue-500">
-                          Enroll Now
-                        </Button>
-                      </div>
-*/
