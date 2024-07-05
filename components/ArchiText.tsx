@@ -11,7 +11,7 @@ const ArchiText: React.FC = () => {
       if (svgRef.current) {
         const width = svgRef.current.clientWidth;
         setDimensions({ width, height: 100 });
-        setFontSize(Math.max(16, Math.min(24, width / 20)));
+        setFontSize(Math.max(20, Math.min(32, width / 15)));
       }
     };
 
@@ -34,7 +34,7 @@ const ArchiText: React.FC = () => {
       >
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#60A5FA" />
+            <stop offset="0%" stopColor="#082043" />
             <stop offset="100%" stopColor="#A855F7" />
           </linearGradient>
         </defs>
@@ -42,9 +42,9 @@ const ArchiText: React.FC = () => {
         <text
           style={{
             fill: 'url(#gradient)',
-            //fontSize: `${fontSize}px`,
-            fontSize: '24px',
-            fontWeight: 'normal',
+            fontSize: `${fontSize}px`,
+            //fontSize: '1.5em',
+            fontWeight: 'semi-bold',
           }}
         >
           <textPath xlinkHref="#curve" startOffset="50%" textAnchor="middle">

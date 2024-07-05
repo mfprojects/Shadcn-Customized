@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/legacy/image';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
@@ -36,10 +37,10 @@ export function CarouselDApiDemo() {
           City of Athens
         </h2>
       </div>
-      <div className="flex justify-center w-full">
+      <div className="flex justify-center w-full h-full">
         <Carousel
           setApi={setApi}
-          className="w-full max-w-sm md:max-w-lg lg:max-w-md xl:max-w-xl"
+          className="w-full h-full sm:max-w-xl xl:max-w-2xl"
         >
           <CarouselContent className="">
             {[
@@ -51,13 +52,12 @@ export function CarouselDApiDemo() {
             ].map((src, index) => (
               <CarouselItem className="" key={index}>
                 <Card className="my-3 mx-3">
-                  <CardContent className="flex aspect-auto max-h-96  items-center justify-center p-0 overflow-hidden">
+                  <CardContent className="flex aspect-auto max-h-600 items-center justify-center p-0 overflow-hidden">
                     <Image
                       src={src}
                       alt={`The city of Athens ${index + 1}`}
-                      width={600}
+                      width={800}
                       height={600}
-                      style={{ objectFit: 'contain' }}
                     />
                   </CardContent>
                 </Card>
