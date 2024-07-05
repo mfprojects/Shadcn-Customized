@@ -11,7 +11,7 @@ const Nav = () => {
 
   return (
     <header className="relative z-50">
-      <nav className="bg-gradient-to-b from-[#0a2855] from-10% to-[#051937] to-100% shadow-navColorLight/50 shadow-md">
+      <nav className="fixed top-0 left-0 right-0 bg-gradient-to-b from-[#0a2855] from-10% to-[#051937] to-100% shadow-navColorLight/50 shadow-md">
         <div className="max-w-screen-3xl mx-auto px-4 sm:px-8">
           <div className="flex items-center justify-between h-16">
             <a href="/">
@@ -76,9 +76,9 @@ const Nav = () => {
 
       {/* Mobile menu, absolute positioned */}
       <div
-        className={`absolute top-16 left-0 right-0 bg-[#051937] transition-all duration-300 ease-in-out z-50 ${
+        className={`fixed top-16 left-0 right-0 bottom-o bg-[#051937] transition-all duration-300 ease-in-out z-50 ${
           isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        } lg:hidden`}
+        } lg:hidden overflow-y-auto`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
