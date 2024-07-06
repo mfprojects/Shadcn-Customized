@@ -65,6 +65,7 @@ const config = {
         color30: '#8769E8',
         color10: '#4A9DF3',
         bgcolor: '#edf2f7',
+        highlightColor: '#606d98',
         mainColor: '#020817',
         textColor: '#cae9fb',
         textColor2: '#EAECE8',
