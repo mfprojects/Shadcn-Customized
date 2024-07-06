@@ -1,61 +1,91 @@
 'use client';
+import { useState } from 'react';
 import ArchiText from '@/components/ArchiText';
 import UserForm from '../../components/UserForm';
 import { CarouselDApiDemo } from '@/components/CarouselApiDemo';
 import Image from 'next/legacy/image';
 import { Card } from '@/components/ui/card';
 
+const components = {
+  Carousel: CarouselDApiDemo,
+  UserForm: UserForm,
+  ImageBox: () => (
+    <div className="w-full h-96 relative">
+      <Image
+        src="https://images.unsplash.com/photo-1719256060810-7375d89eea01?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        layout="fill"
+        objectFit="cover"
+        alt="Sample image"
+      />
+    </div>
+  ),
+};
+
 export default function CustomComponents() {
+  const [selectedComponent, setSelectedComponent] = useState('Carousel');
+  const ComponentToRender = components[selectedComponent];
+
   return (
-    <div className="flex flex-col min-h-screen ">
-      <div className="flex-grow flex flex-col max-w-screen-3xl w-full mx-auto p-4">
-        <section className="">
-          <ArchiText />
-        </section>
-        <div className="relative mb-8">
-          <h1 className="subpixel-antialiased flex-auto pt-8 pb-3 text-5xl font-bold text-wrap text-center bg-clip-text text-transparent bg-gradient-to-r from-color60 to-color10 animate-fade-in-down mx-auto w-fit px-4">
-            Component Collection
-            <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-color60 to-color30"></span>
-          </h1>
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow flex flex-col lg:flex-row">
+        <div className="lg:w-52 lg:min-h-screen lg:bg-[#0F234C] lg:p-4">
+          <div className="lg:sticky lg:top-2">
+            <div className="hidden lg:block divide-y divide-dashed divide-gray-600">
+              <h2 className="text-xl font-medium text-white mb-4">
+                Choose component to display
+              </h2>
+              <ul className="space-y-2 pt-4">
+                {Object.keys(components).map((componentName) => (
+                  <li key={componentName}>
+                    <button
+                      className={`w-full text-left px-4 py-2 rounded ${
+                        selectedComponent === componentName
+                          ? 'bg-color30 text-white'
+                          : 'text-gray-300 hover:bg-color30/50'
+                      }`}
+                      onClick={() => setSelectedComponent(componentName)}
+                    >
+                      {componentName}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="max-w-screen-3xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-2 pb-12 sm:px-4">
-            <div className="w-full h-full">
-              <div className="flex-1 flex flex-col items-center sm:justify-center rounded-lg bg-[#0F234C] shadow-highlight2 border-2 border-color30 h-full">
-                <div className="flex justify-center items-center min-h-96 w-full gap-4 pb-8">
-                  <CarouselDApiDemo />
-                </div>
-              </div>
+        <div className="flex-grow px-2 py-2">
+          <div className="max-w-screen-lg mx-auto">
+            <ArchiText />
+            <div className="flex flex-col justify-center items-center text-center w-full mb-1 lg:mb-0">
+              <h1 className="subpixel-antialiased flex-auto text-5xl font-bold text-wrap text-center lg:text-center bg-clip-text text-transparent bg-gradient-to-r from-color60 to-color10 animate-fade-in-down w-fit px-4 mb-8 relative">
+                Component Collection
+                <span className="absolute -bottom-1 left-0 right-0 mx-auto h-1 bg-gradient-to-r from-color60 to-color30"></span>
+              </h1>
             </div>
-            <div className="w-full h-full">
-              <div className="rounded-lg w-full h-full shadow-highlight2 bg-[#0F234C] border-2 border-color30 overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-12 h-full">
-                  <div className="lg:col-span-4 h-full">
-                    <div className="h-40 lg:h-full relative">
-                      <Image
-                        className="rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none opacity-70 object-cover"
-                        alt="none"
-                        src="https://images.unsplash.com/photo-1719256060810-7375d89eea01?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        layout="fill"
-                      />
-                    </div>
-                  </div>
-                  <div className="lg:col-span-8 flex items-center justify-center">
-                    <UserForm />
-                  </div>
-                </div>
-              </div>
+
+            <div className="lg:hidden bg-[#0F234C] p-4 rounded-lg mb-8 divide-y divide-dashed divide-gray-600 border-2 border-color30">
+              <h2 className="divide-y-4 text-xl font-medium text-wrap text-white mb-4">
+                Choose component
+              </h2>
+              <ul className="space-y-2 pt-4">
+                {Object.keys(components).map((componentName) => (
+                  <li key={componentName}>
+                    <button
+                      className={`w-full text-left px-4 py-2 rounded ${
+                        selectedComponent === componentName
+                          ? 'bg-color10 text-white'
+                          : 'text-gray-300 hover:bg-color10/50'
+                      }`}
+                      onClick={() => setSelectedComponent(componentName)}
+                    >
+                      {componentName}
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="lg:col-span-2 w-full h-96 shadow-highlight2 bg-background-gradient-component border-2 border-color30 overflow-hidden">
-              <div className="relative w-full h-full">
-                <Image
-                  className="rounded-lg opacity-20"
-                  alt="aside"
-                  src="https://images.unsplash.com/photo-1719256060810-7375d89eea01?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
+            <div className="w-full rounded-lg shadow-highlight2 bg-[#0F234C] border-2 border-color30 overflow-hidden p-4">
+              <ComponentToRender />
             </div>
           </div>
         </div>
