@@ -9,12 +9,13 @@ const components = {
   Carousel: CarouselDApiDemo,
   UserForm: UserForm,
   ImageBox: () => (
-    <div className="w-full h-96 relative">
+    <div className="relative w-full h-96 sm:h-112 md:h-[700px]">
       <Image
-        src="https://images.unsplash.com/photo-1719256060810-7375d89eea01?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://images.unsplash.com/photo-1717501219345-06ea2bf3eb80?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Sample image"
         layout="fill"
         objectFit="cover"
-        alt="Sample image"
+        className=""
       />
     </div>
   ),
@@ -24,7 +25,7 @@ type ComponentKey = keyof typeof components;
 
 export default function CustomComponents() {
   const [selectedComponent, setSelectedComponent] =
-    useState<ComponentKey>('Carousel');
+    useState<ComponentKey>('ImageBox');
   const ComponentToRender = components[selectedComponent];
 
   return (
@@ -58,7 +59,7 @@ export default function CustomComponents() {
           </div>
         </div>
         <div className="flex-grow px-2 py-2">
-          <div className="max-w-screen-lg mx-auto">
+          <div className="max-w-screen-xl mx-auto">
             <ArchiText />
             <div className="flex flex-col justify-center items-center text-center w-full mb-1 lg:mb-0">
               <h1 className="subpixel-antialiased flex-auto text-5xl font-bold text-wrap text-center lg:text-center bg-clip-text text-transparent bg-gradient-to-r from-color60 to-color10 animate-fade-in-down w-fit px-4 mb-8 relative">
