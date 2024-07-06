@@ -4,7 +4,6 @@ import ArchiText from '@/components/ArchiText';
 import UserForm from '../../components/UserForm';
 import { CarouselDApiDemo } from '@/components/CarouselApiDemo';
 import Image from 'next/legacy/image';
-import { Card } from '@/components/ui/card';
 
 const components = {
   Carousel: CarouselDApiDemo,
@@ -21,8 +20,11 @@ const components = {
   ),
 };
 
+type ComponentKey = keyof typeof components;
+
 export default function CustomComponents() {
-  const [selectedComponent, setSelectedComponent] = useState('Carousel');
+  const [selectedComponent, setSelectedComponent] =
+    useState<ComponentKey>('Carousel');
   const ComponentToRender = components[selectedComponent];
 
   return (
