@@ -2,40 +2,50 @@ import React, { useEffect, useRef, useState } from 'react';
 import { string } from 'zod';
 
 export interface ArchiTextProps {
-  text?: string;
-  fontSize?: number;
-  fontColor?: string;
-  gradientStart?: string;
-  gradientEnd?: string;
-  width?: number;
-  height?: number;
+  text: string;
+  fontSize: number;
+  fontColor: string;
+  gradientStart: string;
+  gradientEnd: string;
+  width: number;
+  height: number;
 }
 
-const ArchiText: React.FC<ArchiTextProps> = ({
-  text = 'Responsively designed',
-  fontColor = 'url(#gradient)',
-  gradientStart = '#082043',
-  gradientEnd = '#A855F7',
-  width = 500,
-  height = 100,
-}) => {
+const defaultProps: ArchiTextProps = {
+  text: 'Responsively designed',
+  fontSize: 32,
+  fontColor: 'url(#gradient)',
+  gradientStart: '#082043',
+  gradientEnd: '#A855F7',
+  width: 500,
+  height: 100,
+};
+
+const ArchiText: React.FC<ArchiTextProps> = (props) => {
+  const {
+    text,
+    fontSize,
+    fontColor,
+    gradientStart,
+    gradientEnd,
+    width,
+    height,
+  } = { ...defaultProps, ...props };
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [dimensions, setDimensions] = useState({ width, height });
-  const [fontSize, setFontSize] = useState(30);
 
   useEffect(() => {
     const updateDimensions = () => {
       if (svgRef.current) {
-        const width = svgRef.current.clientWidth;
-        setDimensions({ width, height: 100 });
-        setFontSize(Math.max(20, Math.min(32, width / 15)));
+        const newWidth = svgRef.current.clientWidth;
+        setDimensions({ width: newWidth, height });
       }
     };
 
     updateDimensions();
     window.addEventListener('resize', updateDimensions);
     return () => window.removeEventListener('resize', updateDimensions);
-  }, [height]); //kanskje være blank?
+  }, [height]); // Note: You might want to watch `width` as well if changes should trigger updates
 
   const pathD = `M10,90 Q${dimensions.width / 2},10 ${
     dimensions.width - 10
@@ -45,7 +55,7 @@ const ArchiText: React.FC<ArchiTextProps> = ({
     <section className="flex flex-col justify-center items-center text-center w-full">
       <svg
         ref={svgRef}
-        viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
+        viewBox={`0 0 ${dimensions.width} ${height}`}
         width="100%"
         height="100"
       >
@@ -57,12 +67,9 @@ const ArchiText: React.FC<ArchiTextProps> = ({
         </defs>
         <path id="curve" d={pathD} fill="none" stroke="none" />
         <text
-          style={{
-            fill: fontColor,
-            fontSize: `${fontSize}px`,
-            //fontSize: '1.5em',
-            fontWeight: 'semi-bold',
-          }}
+          fill={fontColor}
+          fontSize={`${fontSize}px`}
+          fontWeight="semi-bold"
         >
           <textPath xlinkHref="#curve" startOffset="50%" textAnchor="middle">
             {text}
