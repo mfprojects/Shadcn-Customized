@@ -80,7 +80,9 @@ export default function CustomComponents() {
                           ? 'bg-color10 text-white'
                           : 'text-gray-300 hover:bg-color10/50'
                       }`}
-                      onClick={() => setSelectedComponent(componentName)}
+                      onClick={() =>
+                        setSelectedComponent(componentName as ComponentKey)
+                      }
                     >
                       {componentName}
                     </button>
