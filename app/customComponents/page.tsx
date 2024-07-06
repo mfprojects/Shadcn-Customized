@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import ArchiText from '@/components/ArchiText';
+import { PopoverComponent } from '@/components/Popover';
+import ArchiText, { ArchiTextProps } from '@/components/ArchiText';
 import UserForm from '../../components/UserForm';
 import { CarouselDApiDemo } from '@/components/CarouselApiDemo';
 import Image from 'next/legacy/image';
@@ -8,6 +9,7 @@ import Image from 'next/legacy/image';
 const components = {
   Carousel: CarouselDApiDemo,
   UserForm: UserForm,
+  ArchiText: ArchiText,
   ImageBox: () => (
     <div className="relative w-full h-96 sm:h-112 md:h-[700px]">
       <Image
@@ -26,7 +28,34 @@ type ComponentKey = keyof typeof components;
 export default function CustomComponents() {
   const [selectedComponent, setSelectedComponent] =
     useState<ComponentKey>('ImageBox');
+  const [isPopoverVisible, setIsPopoverVisible] = useState(false);
+
+  const [archiTextProps, setArchiTextProps] = useState({
+    text: 'Default Text',
+    fontSize: 16,
+    fontColor: '#000',
+    gradientStart: '#ff0000',
+    gradientEnd: '#0000ff',
+    width: 200,
+    height: 50,
+  });
+
   const ComponentToRender = components[selectedComponent];
+
+  const handleArchiTextClick = () => {
+    setSelectedComponent('ArchiText');
+    setIsPopoverVisible((prev) => !prev);
+  };
+
+  const defaultPopoverProps = {
+    text: archiTextProps.text,
+    fontSize: archiTextProps.fontSize,
+    fontColor: archiTextProps.fontColor,
+    gradientStart: archiTextProps.gradientStart,
+    gradientEnd: archiTextProps.gradientEnd,
+    width: archiTextProps.width,
+    height: archiTextProps.height,
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -40,18 +69,30 @@ export default function CustomComponents() {
               <ul className="space-y-2 pt-4">
                 {Object.keys(components).map((componentName) => (
                   <li key={componentName}>
-                    <button
-                      className={`w-full text-left px-4 py-2 rounded ${
-                        selectedComponent === componentName
-                          ? 'bg-color30 text-white'
-                          : 'text-gray-300 hover:bg-color30/50'
-                      }`}
-                      onClick={() =>
-                        setSelectedComponent(componentName as ComponentKey)
-                      }
-                    >
-                      {componentName}
-                    </button>
+                    <div className="flex flex-col">
+                      <button
+                        className={`w-full text-left px-4 py-2 rounded ${
+                          selectedComponent === componentName
+                            ? 'bg-color30 text-white'
+                            : 'text-gray-300 hover:bg-color30/50'
+                        }`}
+                        onClick={() => {
+                          if (componentName === 'ArchiText') {
+                            handleArchiTextClick();
+                          } else {
+                            setSelectedComponent(componentName as ComponentKey);
+                            setIsPopoverVisible(false); // Hide popover when selecting other components
+                          }
+                        }}
+                      >
+                        {componentName}
+                      </button>
+                      {componentName === 'ArchiText' && isPopoverVisible && (
+                        <div className="ml-4 mt-2">
+                          <PopoverComponent props={defaultPopoverProps} />
+                        </div>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -75,18 +116,30 @@ export default function CustomComponents() {
               <ul className="space-y-2 pt-4">
                 {Object.keys(components).map((componentName) => (
                   <li key={componentName}>
-                    <button
-                      className={`w-full text-left px-4 py-2 rounded ${
-                        selectedComponent === componentName
-                          ? 'bg-color30 text-white'
-                          : 'text-gray-300 hover:bg-color30/50'
-                      }`}
-                      onClick={() =>
-                        setSelectedComponent(componentName as ComponentKey)
-                      }
-                    >
-                      {componentName}
-                    </button>
+                    <div className="flex flex-col">
+                      <button
+                        className={`w-full text-left px-4 py-2 rounded ${
+                          selectedComponent === componentName
+                            ? 'bg-color30 text-white'
+                            : 'text-gray-300 hover:bg-color30/50'
+                        }`}
+                        onClick={() => {
+                          if (componentName === 'ArchiText') {
+                            handleArchiTextClick();
+                          } else {
+                            setSelectedComponent(componentName as ComponentKey);
+                            setIsPopoverVisible(false); // Hide popover when selecting other components
+                          }
+                        }}
+                      >
+                        {componentName}
+                      </button>
+                      {componentName === 'ArchiText' && isPopoverVisible && (
+                        <div className="ml-4 mt-2">
+                          <PopoverComponent props={archiTextProps} />
+                        </div>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>
