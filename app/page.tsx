@@ -14,10 +14,10 @@ export default function Home() {
         {/* Main Content Section */}
         <section className="lg:max-w-5xl mx-auto flex flex-col items-center justify-center text-center rounded-lg bg-color60 p-8">
           <div className="flex flex-col items-center justify-center">
-            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl font-semibold text-textColor">
+            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl font-semibold text-color30">
               A stylized component library
             </h2>
-            <p className="mb-6 text-sm md:text-md lg:text-lg text-textColor/70">
+            <p className="mb-6 text-sm md:text-md lg:text-lg text-textColor/90">
               Free to use and under constant development
             </p>
             <a

@@ -69,7 +69,7 @@ export default function CustomComponents() {
             </div>
 
             <div className="lg:hidden bg-[#0F234C] p-4 rounded-lg mb-8 divide-y divide-dashed divide-gray-600 border-2 border-color30">
-              <h2 className="divide-y-4 text-xl font-medium text-wrap text-white mb-4">
+              <h2 className="divide-y-4 text-xl font-medium text-wrap text-textColor2 mb-4">
                 Choose component
               </h2>
               <ul className="space-y-2 pt-4">
@@ -78,8 +78,8 @@ export default function CustomComponents() {
                     <button
                       className={`w-full text-left px-4 py-2 rounded ${
                         selectedComponent === componentName
-                          ? 'bg-color10 text-white'
-                          : 'text-gray-300 hover:bg-color10/50'
+                          ? 'bg-color30 text-white'
+                          : 'text-gray-300 hover:bg-color30/50'
                       }`}
                       onClick={() =>
                         setSelectedComponent(componentName as ComponentKey)

@@ -67,6 +67,7 @@ const config = {
         bgcolor: '#d4dfed',
         mainColor: '#020817',
         textColor: '#cae9fb',
+        textColor2: '#EAECE8',
         borderColor: '#7A6BF2',
         componentColor: '#465373',
         navColorLight: '#072C63',
