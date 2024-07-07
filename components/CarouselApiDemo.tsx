@@ -31,9 +31,9 @@ export function CarouselDApiDemo() {
   }, [api]);
 
   return (
-    <div className="flex flex-col min-h-screen justify-center items-center">
+    <div className="flex flex-col justify-center items-center">
       <div className="mb-2">
-        <h2 className="text-2xl font-light leading-tight tracking-wide text-indigo-100 text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent mb-6 lg:mb-8">
+        <h2 className="text-2xl font-light leading-tight tracking-wide text-indigo-100 text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent mt-6 lg:mb-2">
           Tap or Click to enlarge
         </h2>
       </div>

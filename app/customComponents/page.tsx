@@ -9,19 +9,19 @@ import { SheetComponent } from '@/components/SheetComponent';
 export default function CustomComponents() {
   type ComponentKey = 'Carousel' | 'UserForm' | 'ArchiText' | 'ImageBox';
   const [selectedComponentKey, setSelectedComponentKey] =
-    useState<ComponentKey>('ImageBox');
+    useState<ComponentKey>('Carousel');
   const [isArchiTextSheetVisible, setIsArchiTextSheetVisible] = useState(false);
   const [isImageBoxSheetVisible, setIsImageBoxSheetVisible] = useState(false);
 
   const [archiTextProps, setArchiTextProps] = useState<ArchiTextProps>({
     text: 'Responsively designed',
-    fontSize: 28,
+    fontSize: 30,
     fontColor: 'url(#gradient)',
     gradientStart: '#cae9fb',
     gradientEnd: '#38B5F8',
     width: 500,
-    height: 100,
-    bendDegree: 30,
+    height: 200,
+    bendDegree: -10,
   });
 
   const [imageBoxProps, setImageBoxProps] = useState<ImageBoxProps>({
@@ -64,10 +64,10 @@ export default function CustomComponents() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="flex-grow flex flex-col lg:flex-row">
-        <div className="lg:w-52 lg:min-h-screen lg:bg-[#0F234C] lg:p-4">
-          <div className="lg:sticky lg:top-2">
-            <div className="hidden lg:block divide-y divide-dashed divide-gray-600">
+      <div className="flex-grow flex flex-col md:flex-row">
+        <div className="md:w-52 md:min-h-screen md:bg-[#0F234C] md:p-4">
+          <div className="md:sticky md:top-2">
+            <div className="hidden md:block divide-y divide-dashed divide-gray-600">
               <h2 className="text-xl font-medium text-white mb-4">
                 Choose component to display
               </h2>
@@ -125,15 +125,17 @@ export default function CustomComponents() {
           </div>
         </div>
         <div className="flex-grow px-2 py-2">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="flex flex-col justify-center items-center text-center w-full mb-1 lg:mb-0">
-              <h1 className="invert subpixel-antialiased flex-auto text-5xl font-bold text-wrap text-center lg:text-center bg-clip-text text-transparent bg-gradient-to-r from-color60 to-[#0071c1] animate-fade-in-down w-fit px-4 my-8 py-4 relative">
-                Component Collection
-                <span className="absolute -bottom-1 left-0 right-0 mx-auto h-1 bg-gradient-to-r from-color60 to-color30"></span>
-              </h1>
+          <div className="max-w-screen-3xl mx-auto">
+            <div className="flex flex-col justify-center min-h-[192px] items-center text-center w-full mb-1 md:mb-0">
+              <div>
+                <h1 className="invert subpixel-antialiased flex-auto text-5xl font-bold text-wrap text-center md:text-center bg-clip-text text-transparent bg-gradient-to-r from-color60 to-[#0071c1] animate-fade-in-down w-fit px-4 my-8 py-4 relative">
+                  Component Collection
+                  <span className="absolute -bottom-1 left-0 right-0 mx-auto h-1 bg-gradient-to-r from-color60 to-color30"></span>
+                </h1>
+              </div>
             </div>
 
-            <div className="lg:hidden bg-[#0F234C] p-4 rounded-lg mb-8 divide-y divide-dashed divide-gray-600 border-2 border-color30">
+            <div className="md:hidden bg-[#0F234C] p-4 mx-4 rounded-lg mb-8 divide-y divide-dashed divide-gray-600 border-2 border-color30">
               <h2 className="divide-y-4 text-xl font-medium text-wrap text-textColor2 mb-4">
                 Choose component
               </h2>
@@ -188,7 +190,7 @@ export default function CustomComponents() {
                 ))}
               </ul>
             </div>
-            <div className="w-full mb-9 bg-color60/200 overflow-hidden p-4">
+            <div className=" w-full mx-auto mb-9 p-0">
               <ComponentToRender />
             </div>
           </div>

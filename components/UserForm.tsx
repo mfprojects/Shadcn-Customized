@@ -37,14 +37,14 @@ export default function ProfileForm() {
   }
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col h-[400px] lg:h-[96px] lg:min-h-[500px] mx-auto max-w-4xl justify-center">
       <h2 className="text-2xl font-light leading-tight tracking-wide text-indigo-100 text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent mb-6 lg:mb-8">
         Create your account
       </h2>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-col space-y-6 lg:space-y-8"
+          className="flex flex-col px-2 lg:px-0 space-y-6 lg:space-y-8"
         >
           <FormField
             control={form.control}

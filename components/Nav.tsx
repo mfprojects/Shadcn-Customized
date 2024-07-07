@@ -15,7 +15,7 @@ const Nav = () => {
         <div className="max-w-screen-3xl mx-auto px-4 sm:px-8">
           <div className="flex items-center justify-between h-16">
             <a href="/">
-              <h1 className="bg-gradient-to-r from-[#E1B581] to-[#CB8B46] bg-clip-text text-transparent text-2xl subpixel-antialiased font-light">
+              <h1 className="bg-gradient-to-r from-[#F7DBB5] to-[#FBB57C] bg-clip-text text-transparent text-2xl subpixel-antialiased font-light">
                 <span className="underline decoration-h1underline">Com</span>
                 <span className="underline decoration-blue-500">pLib</span>
               </h1>

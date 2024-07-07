@@ -18,16 +18,17 @@ const ImageBox: React.FC<ImageBoxProps> = (imgProps) => {
   const { imgSrc, width, height } = { ...defaultProps, ...imgProps };
 
   return (
-    <div className="relative w-full h-96 sm:h-112 md:h-[700px]">
-      <Image
-        className="shadow-none transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400"
-        src={imgSrc}
-        alt="Sample image"
-        layout="fill"
-        width={width}
-        height={height}
-        objectFit="cover"
-      />
+    <div className="lg:flex lg:flex-row min-h-screen justify-start top-3/4 mx-4">
+      <div className="relative w-full h-[400px] md:h-[450px] lg:h-[1000px] xl:h-1000">
+        <Image
+          className="shadow-2xl  object-fill w-full h-0 sm:object-fill md:object-top lg:object-contain xl:object-contain transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400 rounded-xl"
+          src={imgSrc}
+          alt="Sample image"
+          layout="fill"
+          width={width}
+          height={height}
+        />
+      </div>
     </div>
   );
 };
