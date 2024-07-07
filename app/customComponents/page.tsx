@@ -1,43 +1,65 @@
 'use client';
 import { useState } from 'react';
-import { PopoverComponent } from '@/components/Popover';
 import ArchiText, { ArchiTextProps } from '@/components/ArchiText';
 import UserForm from '../../components/UserForm';
 import { CarouselDApiDemo } from '@/components/CarouselApiDemo';
-import ImageBox from '@/components/ImageBox';
+import ImageBox, { ImageBoxProps } from '@/components/ImageBox';
+import { SheetComponent } from '@/components/SheetComponent';
 
 export default function CustomComponents() {
   type ComponentKey = 'Carousel' | 'UserForm' | 'ArchiText' | 'ImageBox';
   const [selectedComponentKey, setSelectedComponentKey] =
     useState<ComponentKey>('ImageBox');
-  const [isPopoverVisible, setIsPopoverVisible] = useState(false);
+  const [isArchiTextSheetVisible, setIsArchiTextSheetVisible] = useState(false);
+  const [isImageBoxSheetVisible, setIsImageBoxSheetVisible] = useState(false);
 
   const [archiTextProps, setArchiTextProps] = useState<ArchiTextProps>({
     text: 'Responsively designed',
-    fontSize: 32,
+    fontSize: 28,
     fontColor: 'url(#gradient)',
-    gradientStart: '#082043',
-    gradientEnd: '#A855F7',
+    gradientStart: '#cae9fb',
+    gradientEnd: '#38B5F8',
     width: 500,
     height: 100,
+    bendDegree: 30,
+  });
+
+  const [imageBoxProps, setImageBoxProps] = useState<ImageBoxProps>({
+    imgSrc:
+      'https://images.unsplash.com/photo-1717501219345-06ea2bf3eb80?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // replace with your image path
+    width: 400,
+    height: 300,
   });
 
   const components = {
     Carousel: CarouselDApiDemo,
     UserForm: UserForm,
     ArchiText: () => <ArchiText {...archiTextProps} />,
-    ImageBox: ImageBox,
+    ImageBox: () => <ImageBox {...imageBoxProps} />,
   };
 
   const ComponentToRender = components[selectedComponentKey];
 
   const handleArchiTextClick = () => {
     setSelectedComponentKey('ArchiText');
-    setIsPopoverVisible((prev) => !prev);
+    setIsArchiTextSheetVisible(true);
+    setIsImageBoxSheetVisible(false);
   };
 
-  const handleArchiTextPropsChange = (newProps: typeof archiTextProps) => {
+  const handleImageBoxClick = () => {
+    setSelectedComponentKey('ImageBox');
+    setIsImageBoxSheetVisible(true);
+    setIsArchiTextSheetVisible(false);
+  };
+
+  const handleArchiTextPropsChange = (newProps: ArchiTextProps) => {
     setArchiTextProps(newProps);
+    setIsArchiTextSheetVisible(false); // Hide the sheet after saving changes
+  };
+
+  const handleImageBoxPropsChange = (newProps: ImageBoxProps) => {
+    setImageBoxProps(newProps);
+    setIsImageBoxSheetVisible(false); // Hide the sheet after saving changes
   };
 
   return (
@@ -62,25 +84,39 @@ export default function CustomComponents() {
                         onClick={() => {
                           if (componentName === 'ArchiText') {
                             handleArchiTextClick();
+                          } else if (componentName === 'ImageBox') {
+                            handleImageBoxClick();
                           } else {
                             setSelectedComponentKey(
                               componentName as ComponentKey
                             );
-                            setIsPopoverVisible(false); // Hide popover when selecting other components
+                            setIsArchiTextSheetVisible(false);
+                            setIsImageBoxSheetVisible(false);
                           }
                         }}
                       >
                         {componentName}
                       </button>
-                      {componentName === 'ArchiText' && isPopoverVisible && (
-                        <div className="ml-4 mt-2">
-                          <PopoverComponent
-                            props={archiTextProps}
-                            buttonText="Edit ArchiText Properties"
-                            onSubmit={handleArchiTextPropsChange}
-                          />
-                        </div>
-                      )}
+                      {componentName === 'ArchiText' &&
+                        isArchiTextSheetVisible && (
+                          <div className="mt-2">
+                            <SheetComponent
+                              props={archiTextProps}
+                              buttonText="Edit ArchiText Properties"
+                              onSubmit={handleArchiTextPropsChange}
+                            />
+                          </div>
+                        )}
+                      {componentName === 'ImageBox' &&
+                        isImageBoxSheetVisible && (
+                          <div className="mt-2">
+                            <SheetComponent
+                              props={imageBoxProps}
+                              buttonText="Edit ImageBox Properties"
+                              onSubmit={handleImageBoxPropsChange}
+                            />
+                          </div>
+                        )}
                     </div>
                   </li>
                 ))}
@@ -90,18 +126,8 @@ export default function CustomComponents() {
         </div>
         <div className="flex-grow px-2 py-2">
           <div className="max-w-screen-xl mx-auto">
-            <ArchiText
-              text={'Responsively designed'}
-              fontSize={30}
-              fontColor={'url(#gradient)'}
-              gradientStart={'#082043'}
-              gradientEnd={'#8312ef'}
-              width={500}
-              height={100}
-            />
-
             <div className="flex flex-col justify-center items-center text-center w-full mb-1 lg:mb-0">
-              <h1 className="subpixel-antialiased flex-auto text-5xl font-bold text-wrap text-center lg:text-center bg-clip-text text-transparent bg-gradient-to-r from-color60 to-[#0071c1] animate-fade-in-down w-fit px-4 mb-8 relative">
+              <h1 className="invert subpixel-antialiased flex-auto text-5xl font-bold text-wrap text-center lg:text-center bg-clip-text text-transparent bg-gradient-to-r from-color60 to-[#0071c1] animate-fade-in-down w-fit px-4 my-8 py-4 relative">
                 Component Collection
                 <span className="absolute -bottom-1 left-0 right-0 mx-auto h-1 bg-gradient-to-r from-color60 to-color30"></span>
               </h1>
@@ -124,31 +150,45 @@ export default function CustomComponents() {
                         onClick={() => {
                           if (componentName === 'ArchiText') {
                             handleArchiTextClick();
+                          } else if (componentName === 'ImageBox') {
+                            handleImageBoxClick();
                           } else {
                             setSelectedComponentKey(
                               componentName as ComponentKey
                             );
-                            setIsPopoverVisible(false); // Hide popover when selecting other components
+                            setIsArchiTextSheetVisible(false);
+                            setIsImageBoxSheetVisible(false);
                           }
                         }}
                       >
                         {componentName}
                       </button>
-                      {componentName === 'ArchiText' && isPopoverVisible && (
-                        <div className="ml-4 mt-2">
-                          <PopoverComponent
-                            props={archiTextProps}
-                            buttonText="Edit ArchiText Properties"
-                            onSubmit={handleArchiTextPropsChange}
-                          />
-                        </div>
-                      )}
+                      {componentName === 'ArchiText' &&
+                        isArchiTextSheetVisible && (
+                          <div className="ml-4 mt-2">
+                            <SheetComponent
+                              props={archiTextProps}
+                              buttonText="Edit ArchiText Properties"
+                              onSubmit={handleArchiTextPropsChange}
+                            />
+                          </div>
+                        )}
+                      {componentName === 'ImageBox' &&
+                        isImageBoxSheetVisible && (
+                          <div className="ml-4 mt-2">
+                            <SheetComponent
+                              props={imageBoxProps}
+                              buttonText="Edit ImageBox Properties"
+                              onSubmit={handleImageBoxPropsChange}
+                            />
+                          </div>
+                        )}
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="w-full rounded-lg shadow-highlight2 bg-color10/10 border-2 border-color10 overflow-hidden p-4">
+            <div className="w-full mb-9 bg-color60/200 overflow-hidden p-4">
               <ComponentToRender />
             </div>
           </div>

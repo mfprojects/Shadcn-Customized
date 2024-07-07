@@ -15,7 +15,7 @@ const Nav = () => {
         <div className="max-w-screen-3xl mx-auto px-4 sm:px-8">
           <div className="flex items-center justify-between h-16">
             <a href="/">
-              <h1 className="bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent text-2xl subpixel-antialiased font-light">
+              <h1 className="bg-gradient-to-r from-[#E1B581] to-[#CB8B46] bg-clip-text text-transparent text-2xl subpixel-antialiased font-light">
                 <span className="underline decoration-h1underline">Com</span>
                 <span className="underline decoration-blue-500">pLib</span>
               </h1>
@@ -45,21 +45,14 @@ const Nav = () => {
             <div className="lg:hidden">
               <button
                 onClick={toggleMenu}
-                className="text-white opacity-100 border-borderColor hover:opacity-65  pl-2 pt-2 transition-all duration-300"
+                className="text-white opacity-100 border-borderColor hover:opacity-65 pl-2 pt-2 transition-all duration-300"
               >
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="#38B5F8"
-                >
-                  <path
-                    strokeLinecap="square"
-                    strokeLinejoin="miter"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                <div className="group flex h-10 w-10 cursor-pointer items-center justify-center rounded-3xl bg-transparent p-2">
+                  <div className="space-y-2">
+                    <span className="block h-1 w-10 origin-center rounded-full bg-[#43547f] transition-transform ease-in-out group-hover:translate-y-1.5 group-hover:rotate-45"></span>
+                    <span className="block h-1 w-8 origin-center rounded-full bg-orange-500 transition-transform ease-in-out group-hover:w-10 group-hover:-translate-y-1.5 group-hover:-rotate-45"></span>
+                  </div>
+                </div>
               </button>
             </div>
           </div>

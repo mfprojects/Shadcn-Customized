@@ -37,8 +37,8 @@ export default function ProfileForm() {
   }
 
   return (
-    <div className="flex flex-col h-full w-full p-4 lg:p-6">
-      <h2 className="text-2xl font-light leading-tight tracking-wide text-indigo-100 opacity-80 hover:opacity-100 text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent mb-6 lg:mb-8">
+    <div className="flex flex-col justify-center">
+      <h2 className="text-2xl font-light leading-tight tracking-wide text-indigo-100 text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent mb-6 lg:mb-8">
         Create your account
       </h2>
       <Form {...form}>
