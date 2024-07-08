@@ -27,8 +27,6 @@ export default function CustomComponents() {
   const [imageBoxProps, setImageBoxProps] = useState<ImageBoxProps>({
     imgSrc:
       'https://images.unsplash.com/photo-1717501219345-06ea2bf3eb80?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // replace with your image path
-    width: 400,
-    height: 300,
   });
 
   const components = {
@@ -63,13 +61,13 @@ export default function CustomComponents() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="top-level-div flex flex-col min-h-screen ">
       <div className="flex-grow flex flex-col md:flex-row">
-        <div className="md:w-52 md:min-h-screen md:bg-[#0F234C] md:p-4">
-          <div className="md:sticky md:top-2">
+        <div className="md:w-52 md:min-h-screen md:bg-[#051A39] md:p-4">
+          <div className="md:sticky md:top-20">
             <div className="hidden md:block divide-y divide-dashed divide-gray-600">
               <h2 className="text-xl font-medium text-white mb-4">
-                Choose component to display
+                Component to display
               </h2>
               <ul className="space-y-2 pt-4">
                 {Object.keys(components).map((componentName) => (
@@ -78,7 +76,7 @@ export default function CustomComponents() {
                       <button
                         className={`w-full text-left px-4 py-2 rounded ${
                           selectedComponentKey === componentName
-                            ? 'bg-highlightColor text-white'
+                            ? 'bg-highlightColor'
                             : 'text-gray-300 hover:bg-highlightColor/50'
                         }`}
                         onClick={() => {
@@ -99,21 +97,23 @@ export default function CustomComponents() {
                       </button>
                       {componentName === 'ArchiText' &&
                         isArchiTextSheetVisible && (
-                          <div className="mt-2">
+                          <div className="mt-2 transform transition-transform duration-300 ease-out">
                             <SheetComponent
                               props={archiTextProps}
-                              buttonText="Edit ArchiText Properties"
+                              buttonText="Edit Props"
                               onSubmit={handleArchiTextPropsChange}
+                              buttonClassName="text-left text-wrap"
                             />
                           </div>
                         )}
                       {componentName === 'ImageBox' &&
                         isImageBoxSheetVisible && (
-                          <div className="mt-2">
+                          <div className="mt-2 transform transition-transform duration-300 ease-out">
                             <SheetComponent
                               props={imageBoxProps}
-                              buttonText="Edit ImageBox Properties"
+                              buttonText="Edit Props"
                               onSubmit={handleImageBoxPropsChange}
+                              buttonClassName="text-left text-wrap"
                             />
                           </div>
                         )}
@@ -128,14 +128,14 @@ export default function CustomComponents() {
           <div className="max-w-screen-3xl mx-auto">
             <div className="flex flex-col justify-center min-h-[192px] items-center text-center w-full mb-1 md:mb-0">
               <div>
-                <h1 className="invert subpixel-antialiased flex-auto text-5xl font-bold text-wrap text-center md:text-center bg-clip-text text-transparent bg-gradient-to-r from-color60 to-[#0071c1] animate-fade-in-down w-fit px-4 my-8 py-4 relative">
+                <h1 className="flex-auto text-5xl font-bold text-wrap text-center md:text-center bg-clip-text text-transparent bg-gradient-to-r from-[#D19757] from-10% to-orange-500 to-100% animate-fade-in-down w-fit px-4 my-8 py-4 relative">
                   Component Collection
-                  <span className="absolute -bottom-1 left-0 right-0 mx-auto h-1 bg-gradient-to-r from-color60 to-color30"></span>
+                  <span className="absolute -bottom-1 left-0 right-0 mx-auto h-1 bg-gradient-to-r from-color10 from-10% to-color30 to-100%"></span>
                 </h1>
               </div>
             </div>
 
-            <div className="md:hidden bg-[#0F234C] p-4 mx-4 rounded-lg mb-8 divide-y divide-dashed divide-gray-600 border-2 border-color30">
+            <div className="md:hidden bg-[#0F234C] p-4 mx-4 mt-12 sm:mt-0 rounded-lg mb-8 divide-y divide-dashed divide-gray-600 border-2 border-color30">
               <h2 className="divide-y-4 text-xl font-medium text-wrap text-textColor2 mb-4">
                 Choose component
               </h2>
@@ -167,21 +167,23 @@ export default function CustomComponents() {
                       </button>
                       {componentName === 'ArchiText' &&
                         isArchiTextSheetVisible && (
-                          <div className="ml-4 mt-2">
+                          <div className="mt-2 transform transition-transform duration-300 ease-out">
                             <SheetComponent
                               props={archiTextProps}
                               buttonText="Edit ArchiText Properties"
                               onSubmit={handleArchiTextPropsChange}
+                              buttonClassName="my-4"
                             />
                           </div>
                         )}
                       {componentName === 'ImageBox' &&
                         isImageBoxSheetVisible && (
-                          <div className="ml-4 mt-2">
+                          <div className="mt-2 transform transition-transform duration-300 ease-out">
                             <SheetComponent
                               props={imageBoxProps}
                               buttonText="Edit ImageBox Properties"
                               onSubmit={handleImageBoxPropsChange}
+                              buttonClassName="my-4"
                             />
                           </div>
                         )}
@@ -190,7 +192,7 @@ export default function CustomComponents() {
                 ))}
               </ul>
             </div>
-            <div className=" w-full mx-auto mb-9 p-0">
+            <div className="flex flex-col h-screen mx-auto p-0 rounded-md">
               <ComponentToRender />
             </div>
           </div>

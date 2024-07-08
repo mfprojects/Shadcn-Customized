@@ -42,7 +42,7 @@ const ArchiText: React.FC<ArchiTextProps> = (props) => {
       const screenWidth = window.innerWidth;
       const adjustedWidth = Math.min(screenWidth - 20, width); // Adjust width to be within the screen width with some padding
       const adjustedHeight = height + Math.abs(bendDegree * 5) * 2;
-      const newFontSize = Math.max(fontSize * (adjustedWidth / width), 16); // Ensure a minimum font size
+      const newFontSize = Math.max(fontSize * (adjustedWidth / width), 26); // Ensure a minimum font size
 
       setAdjustedFontSize(newFontSize);
       setSvgDimensions({ width: adjustedWidth, height: adjustedHeight });
@@ -61,12 +61,12 @@ const ArchiText: React.FC<ArchiTextProps> = (props) => {
   } ${svgDimensions.width - 10},${height / 2}`;
 
   return (
-    <div className="flex flex-col min-h-screen justify-center items-center p-4 overflow-hidden">
-      <div className="w-full flex justify-center overflow-hidden">
+    <div className="flex flex-col min-h-screen justify-center items-center p-4 overflow-hidden my-auto">
+      <div className="w-full object-contain flex justify-center overflow-hidden">
         <svg
           viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.height}`}
-          width="100%"
-          height="auto"
+          width="50%"
+          height="50%"
           preserveAspectRatio="xMidYMid meet"
         >
           <defs>

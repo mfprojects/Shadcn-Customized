@@ -23,6 +23,10 @@ const config = {
       padding: '2rem',
     },
     extend: {
+      fontFamily: {
+        montserrat: ['var(--font-montserrat)'],
+        inter: ['var(--font-inter)'],
+      },
       maxHeight: {
         '600': '37.5rem',
         '800': '50rem',
@@ -83,6 +87,13 @@ const config = {
         navbar: '#051937',
         h1custom: '#F2F2F2',
         h1underline: '#38B5F8',
+        nyyale: '#193F6F',
+        oxfordblue: '#061D3F',
+        nyorange: '#F1A66C',
+        nyorange2: '#DC732F',
+        nyblalys: '#13345F',
+        nylysgra: '#13345F',
+
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -131,6 +142,12 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+    },
+    variants: {
+      extend: {
+        transform: ['hover', 'focus'],
+        transitionProperty: ['responsive', 'motion-safe', 'motion-reduce'],
       },
     },
   },

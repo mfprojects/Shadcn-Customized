@@ -1,31 +1,32 @@
 'use client';
+import { CarouselDApiDemo } from '@/components/CarouselApiDemo';
 import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="Flex flex-col">
+    <div className="top-level-div Flex flex-col min-h-screen">
       <div className="flex flex-col">
         <div className="flex-grow">
+          <CarouselDApiDemo/>
           {/* Hero Section */}
           <section className=" mx-auto flex flex-col justify-center text-center pb-4 pt-12 max-w-4xl">
-            <h1 className="text-6xl lg:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-color60 to-color10 animate-fade-in-down invert">
+            <h1 className="text-6xl lg:text-7xl font-montserrat text-center bg-clip-text text-transparent  bg-gradient-to-r from-[#D19757] from-10% to-orange-500 to-100%  animate-fade-in-down">
               <a className="underline decoration-color10">Com</a>
               <a className="underline decoration-color30">pLib</a>
             </h1>
           </section>
 
           {/* Main Content Section */}
-          <div className=" flex flex-col justify-center text-center pb-4 pt-12 max-w-4xl">
+          <div className=" flex flex-col justify-center text-center pb-4 pt-12 ">
             <div className="flex flex-col items-center justify-center w-full">
-              <div className="flex flex-row min-h-24"></div>
               <div className="flex flex-row">
                 <div className="flex-1 grid grid-cols-1 gap-4">
                   <div className="flex flex-col justify-center">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-textColor2">
+                    <h2 className="font-inter text-2xl md:text-3xl lg:text-3xl font-extralight text-textColor2">
                       A stylized component library
                     </h2>
                   </div>
-                  <div className="flex flex-col justify-center">
+                  <div className="flex flex-col justify-center items-center">
                     <a
                       href="/customComponents/"
                       className="inline-flex items-center justify-center px-6 py-3 my-6 text-base md:text-lg lg:text-xl font-semibold text-center bg-[#4A9DF3] text-color60 rounded-lg hover:bg-color10/100 focus:ring-color60/50 transition-colors"
@@ -50,36 +51,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-grid col-span-4 gap-4 my-8 justify-center items-center">
-        <Image
-          src="https://images.unsplash.com/photo-1691828621407-c07af8339953?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Thing"
-          width={500}
-          height={600}
-          className="  opacity-30 backdrop-blur-md rounded-xl"
-        />
-        <Image
-          src="https://images.unsplash.com/photo-1691828621407-c07af8339953?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Thing"
-          width={500}
-          height={600}
-          className="shadow-xl shadow-blue-gray-900/50 backdrop-invert opacity-50 backdrop-blur-sm rounded-xl"
-        />
-        <Image
-          src="https://images.unsplash.com/photo-1691828621407-c07af8339953?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Thing"
-          width={500}
-          height={600}
-          className="shadow-xl shadow-blue-gray-900/50"
-        />
-        <Image
-          src="https://images.unsplash.com/photo-1691828621407-c07af8339953?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Thing"
-          width={500}
-          height={600}
-          className="shadow-xl shadow-blue-gray-900/50"
-        />
-      </div>
+      <div className="flex flex-grid col-span-4 gap-4 my-8 justify-center items-center"></div>
     </div>
   );
 }

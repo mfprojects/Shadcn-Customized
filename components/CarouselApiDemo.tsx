@@ -31,14 +31,17 @@ export function CarouselDApiDemo() {
   }, [api]);
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="mb-2">
+    <div className="flex flex-col justify-center items-center shrink">
+      <div className="mb-2 flex-auto">
         <h2 className="text-2xl font-light leading-tight tracking-wide text-indigo-100 text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent mt-6 lg:mb-2">
           Tap or Click to enlarge
         </h2>
       </div>
-      <div className="flex-1 justify-center items-center mx-auto">
-        <Carousel setApi={setApi} className="w-full max-w-2xl">
+      <div className="flex flex-col justify-center items-center h-full w-full">
+        <Carousel
+          setApi={setApi}
+          className="shrink justify-center content-center max-h-screen w-screen contain-content"
+        >
           <CarouselContent className="">
             {[
               '/testData/arkitek1.jpg',
@@ -47,36 +50,39 @@ export function CarouselDApiDemo() {
               '/testData/katt.jpg',
               '/testData/mann.jpg',
             ].map((src, index) => (
-              <CarouselItem className="pl-0" key={index}>
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-auto items-center justify-center">
+              <CarouselItem key={index} className="">
+                <Card className="w-full max-h-[1000px] xl:max-w-screen-2xl mx-auto ">
+                  <CardContent className="flex flex-row justify-center p-0 mr-[156px]  pr-5">
+                    <div className="flex-auto  ">
                       <Image
+                        className="aspect-auto"
                         src={src}
-                        alt={`The city of Athens ${index + 1}`}
-                        objectFit="cover"
+                        alt={`Image ${index + 1}`}
+                        layout="responsive"
+                        objectFit="fill"
                         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADA..."
                         placeholder="blur"
-                        width={800}
-                        height={1000}
+                        height={500}
+                        width={300}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
-                    </CardContent>
-                  </Card>
-                </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </CarouselItem>
             ))}
           </CarouselContent>
 
-          <div className="flex flex-row justify-between mb-10">
-            <CarouselPrevious className="flex relative ml-6 mt-2 lg:ml-12 lg:mt-3 2xl:absolute 2xl:top-1/2 2xl:-left-20" />
+          <div className="flex-row justify-center mb-10  h-full">
+            <CarouselPrevious className="flex relative ml-6 mt-2 lg:ml-12 lg:mt-3" />
             <div className="py-2 flex-1 text-center text-sm text-muted-foreground">
               Slide {current} of {count}
             </div>
-            <CarouselNext className="flex relative mr-6 mt-2 lg:mr-12 lg:mt-3 2xl:absolute 2xl:top-1/2 2xl:-right-20" />
+            <CarouselNext className="flex relative mr-6 mt-2 lg:mr-12 lg:mt-3" />
           </div>
         </Carousel>
       </div>
-      <div className="flex items-center justify-center w-full pb-4 gap-4">
+      <div className="flex items-center justify-center pb-4 gap-4">
         <Button
           size="lg"
           className="justify-center shadow-md shadow-color10/30 bg-color10"

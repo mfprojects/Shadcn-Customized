@@ -17,12 +17,16 @@ interface SheetComponentProps<T extends Record<string, any>> {
   props: T;
   buttonText?: string;
   onSubmit: (newProps: T) => void;
+  className?: string;
+  buttonClassName?: string;
 }
 
 export function SheetComponent<T extends Record<string, any>>({
   props,
   buttonText = 'Open Sheet',
   onSubmit,
+  className = '',
+  buttonClassName = '', // Default to an empty string
 }: SheetComponentProps<T>) {
   const [formData, setFormData] = useState<T>(props);
 
@@ -46,32 +50,40 @@ export function SheetComponent<T extends Record<string, any>>({
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button className="w-full text-left px-4 py-2 rounded bg-highlightColor text-white">
+        <Button
+          className={`w-full text-left py-4 rounded bg-highlightColor text-white ${buttonClassName} glow-on-hover`}
+        >
           {buttonText}
         </Button>
       </SheetTrigger>
-      <SheetContent className="lg:w-full">
+      <SheetContent className="w-full h-full max-h-screen overflow-y-auto">
         <SheetHeader>
-          <SheetTitle>Edit Props</SheetTitle>
+          <SheetTitle className="py-4 text-center">Edit Props</SheetTitle>
           <SheetDescription>
             <form className="grid gap-4">
-              <div className="space-y-2">
-                <h4 className="font-medium leading-none">Values</h4>
-                <p className="text-sm text-muted-foreground">Set properties</p>
+              <div className="inline-flex flex-row w-full justify-between pt-4">
+                <p className="font-semibold text-white leading-none justify-self-end text-left">
+                  Properties
+                </p>
+                <p className="font-semibold text-white leading-none justify-self-start text-right">
+                  Values
+                </p>
               </div>
-              <div className="grid gap-2">
+              <div className="grid gap-4">
                 {Object.entries(formData).map(([key, value]) => (
                   <div
                     key={key}
-                    className="grid grid-cols-3 items-center gap-4"
+                    className="flex flex-col-2 col-span-3 justify-center items-center items-left gap-4"
                   >
-                    <Label htmlFor={key}>{key}</Label>
+                    <Label htmlFor={key} className="flex-1">
+                      {key}
+                    </Label>
                     <Input
                       id={key}
                       name={key}
                       value={value.toString()}
                       onChange={handleInputChange}
-                      className="col-span-2 h-8"
+                      className="flex-1"
                     />
                   </div>
                 ))}
@@ -81,9 +93,15 @@ export function SheetComponent<T extends Record<string, any>>({
         </SheetHeader>
         <SheetFooter>
           <SheetClose asChild>
-            <Button type="button" onClick={handleSaveChanges}>
-              Save changes
-            </Button>
+            <div className="flex flex-row justify-center items-center h-32 my-8 mx-auto">
+              <Button
+                type="button"
+                onClick={handleSaveChanges}
+                className="bg-color10/90 transition ease-in-out delay-150 hover:-translate-y-1 hover:bg-color10 hover:scale-110 duration-300"
+              >
+                Save changes
+              </Button>
+            </div>
           </SheetClose>
         </SheetFooter>
       </SheetContent>

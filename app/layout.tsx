@@ -1,10 +1,19 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
+import { Montserrat, Inter } from 'next/font/google';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: 'CompLib',
@@ -17,10 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+      <body className={`${montserrat.className} flex flex-col min-h-screen`}>
         <Nav />
-        <main className="flex-grow w-full h-full pt-16 bg-cover bg-[center_center] bg-repeat bg-gridbg">
+        <main className="flex-grow w-full h-full pt-16 bg-cover bg-[center_center] bg-no-repeat bg-gridbg">
           {children}
         </main>
         <Footer />
