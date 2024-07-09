@@ -24,19 +24,19 @@ const Nav = () => {
               <div className="ml-10 flex items-baseline space-x-4">
                 <Link
                   href="/"
-                  className="text-textColor2 hover:bg-color10/70 px-3 py-2 rounded-md"
+                  className="text-textLight hover:bg-color10/70 px-3 py-2 rounded-md"
                 >
                   Home
                 </Link>
                 <Link
                   href="/customComponents"
-                  className="text-textColor2 hover:bg-color10/70 px-3 py-2 rounded-md"
+                  className="text-textLight hover:bg-color10/70 px-3 py-2 rounded-md"
                 >
                   Components
                 </Link>
                 <Link
                   href="/about"
-                  className="text-textColor2 hover:bg-color10/70 px-3 py-2 rounded-md"
+                  className="text-textLight hover:bg-color10/70 px-3 py-2 rounded-md"
                 >
                   About
                 </Link>
@@ -47,10 +47,10 @@ const Nav = () => {
                 onClick={toggleMenu}
                 className="text-white opacity-100 border-borderColor hover:opacity-65 pl-2 pt-2 transition-all duration-300"
               >
-                <div className="group flex h-10 w-10 cursor-pointer items-center justify-center rounded-3xl bg-transparent p-2">
+                <div className="group flex h-10 w-10 cursor-pointer items-center justify-center rounded-3xl p-2">
                   <div className="space-y-2">
                     <span className="block h-1 w-10 origin-center rounded-full bg-orange-500  transition-transform ease-in-out group-hover:translate-y-1.5 group-hover:rotate-45"></span>
-                    <span className="block h-1 w-8 origin-center rounded-full bg-color30 transition-transform ease-in-out group-hover:w-10 group-hover:-translate-y-1.5 group-hover:-rotate-45"></span>
+                    <span className="block h-1 w-8 origin-center rounded-full bg-secondary transition-transform ease-in-out group-hover:w-10 group-hover:-translate-y-1.5 group-hover:-rotate-45"></span>
                   </div>
                 </div>
               </button>
@@ -70,7 +70,7 @@ const Nav = () => {
       {/* Mobile menu, absolute positioned */}
       <div
         className={`fixed top-16 left-0 right-0 bottom-o bg-[#051937] transition-all duration-300 ease-in-out z-50 ${
-          isMenuOpen ? 'opacity-90 visible' : 'opacity-0 invisible'
+          isMenuOpen ? 'visible' : 'opacity-0 invisible'
         } lg:hidden overflow-y-auto`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">

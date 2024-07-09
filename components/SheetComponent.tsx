@@ -73,7 +73,7 @@ export function SheetComponent<T extends Record<string, any>>({
                 {Object.entries(formData).map(([key, value]) => (
                   <div
                     key={key}
-                    className="flex flex-col-2 col-span-3 justify-center items-center items-left gap-4"
+                    className="flex flex-col-2 col-span-3 justify-center items-right gap-4 text-textLight"
                   >
                     <Label htmlFor={key} className="flex-1">
                       {key}
@@ -83,7 +83,7 @@ export function SheetComponent<T extends Record<string, any>>({
                       name={key}
                       value={value.toString()}
                       onChange={handleInputChange}
-                      className="flex-1"
+                      className="flex-1 text-textLight text-left"
                     />
                   </div>
                 ))}
@@ -93,11 +93,11 @@ export function SheetComponent<T extends Record<string, any>>({
         </SheetHeader>
         <SheetFooter>
           <SheetClose asChild>
-            <div className="flex flex-row justify-center items-center h-32 my-8 mx-auto">
+            <div className="flex flex-row justify-center text-textLight items-left h-32 my-8 mx-auto">
               <Button
                 type="button"
                 onClick={handleSaveChanges}
-                className="bg-color10/90 transition ease-in-out delay-150 hover:-translate-y-1 hover:bg-color10 hover:scale-110 duration-300"
+                className="bg-accent transition ease-in-out delay-150 hover:-translate-y-1 hover:bg-primary hover:scale-110 duration-300"
               >
                 Save changes
               </Button>

@@ -38,7 +38,7 @@ export default function ProfileForm() {
 
   return (
     <div className="flex flex-col h-[400px] lg:h-[96px] lg:min-h-[500px] mx-auto max-w-4xl justify-center">
-      <h2 className="text-2xl font-light leading-tight tracking-wide text-indigo-100 text-center bg-gradient-to-r from-indigo-50 to-blue-100 bg-clip-text text-transparent mb-6 lg:mb-8">
+      <h2 className="text-2xl font-light leading-tight tracking-wide text-textDark text-center  mb-6 lg:mb-8">
         Create your account
       </h2>
       <Form {...form}>
@@ -51,7 +51,7 @@ export default function ProfileForm() {
             name="displayname"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="font-bold text-indigo-100">
+                <FormLabel className="font-bold text-textDark">
                   Display Name
                 </FormLabel>
                 <FormControl>
@@ -66,9 +66,7 @@ export default function ProfileForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="font-bold text-indigo-100">
-                  Email
-                </FormLabel>
+                <FormLabel className="font-bold text-textDark">Email</FormLabel>
                 <FormControl>
                   <Input placeholder="Email" {...field} />
                 </FormControl>
@@ -80,7 +78,7 @@ export default function ProfileForm() {
             <Button
               type="submit"
               size="lg"
-              className="justify-center shadow-md shadow-color10/30 bg-color10"
+              className="justify-center shadow-md shadow-primary/50 bg-accent"
             >
               Create Account
             </Button>

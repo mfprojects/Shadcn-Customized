@@ -31,13 +31,12 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-bgcolor text-foreground;
-  }
 }
 
 .top-level-div {
   @apply backdrop-blur-sm;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 @keyframes fade-in-down {
@@ -75,4 +74,24 @@
   100% {
     transform: translateY(0);
   }
+}
+
+.text-primary {
+  color: #00246b;
+}
+
+.text-secondary {
+  color: #cadcfc;
+}
+
+.text-accent {
+  color: #ffa500;
+}
+
+.text-light {
+  color: #eaece8;
+}
+
+.text-dark {
+  color: #333333;
 }
