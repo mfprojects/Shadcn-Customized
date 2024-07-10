@@ -4,9 +4,10 @@ import ArchiText, { ArchiTextProps } from '@/components/ArchiText';
 import UserForm from '../../components/UserForm';
 import ImageBox, { ImageBoxProps } from '@/components/ImageBox';
 import { SheetComponent } from '@/components/SheetComponent';
+import MainUserForm from '@/components/MainUserForm';
 
 export default function CustomComponents() {
-  type ComponentKey = 'UserForm' | 'ArchiText' | 'ImageBox';
+  type ComponentKey = 'UserForm' | 'ArchiText' | 'ImageBox' | 'MainUserForm';
   const [selectedComponentKey, setSelectedComponentKey] =
     useState<ComponentKey>('UserForm');
   const [isArchiTextSheetVisible, setIsArchiTextSheetVisible] = useState(false);
@@ -31,6 +32,7 @@ export default function CustomComponents() {
 
   const components = {
     UserForm: UserForm,
+    MainUserForm: MainUserForm,
     ArchiText: () => <ArchiText {...archiTextProps} />,
     ImageBox: () => <ImageBox {...imageBoxProps} />,
   };
@@ -125,9 +127,9 @@ export default function CustomComponents() {
         </div>
         <div className="flex-grow px-2 py-2">
           <div className="max-w-screen-3xl mx-auto">
-            <div className="flex flex-col justify-center min-h-[192px] items-center text-center w-full mb-1 md:mb-0">
+            <div className="flex flex-col justify-center  items-center text-center w-full mb-1 md:mb-0">
               <div>
-                <h1 className="flex-auto text-5xl font-bold text-wrap text-center md:text-center text-textDark animate-fade-in-down w-fit px-4 my-8 py-4 relative">
+                <h1 className="flex-auto text-5xl font-bold text-wrap text-center md:text-center text-textDark animate-fade-in-down w-fit px-4 my-8 relative">
                   Component Collection
                   <span className="absolute -bottom-1 left-0 right-0 mx-auto h-1 bg-gradient-to-r from-color10 from-10% to-color30 to-100%"></span>
                 </h1>
@@ -196,7 +198,7 @@ export default function CustomComponents() {
                 </ul>
               )}
             </div>
-            <div className="flex flex-col h-screen mx-auto p-0 rounded-md">
+            <div className="p-0 rounded-md mx-auto w-full max-w-screen-xl">
               <ComponentToRender />
             </div>
           </div>

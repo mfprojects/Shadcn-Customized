@@ -28,10 +28,10 @@ export default function Home() {
               className="drop-shadow-lg rounded-lg inline-flex backdrop-blur-md items-center justify-center px-6 py-3 my-6 bg-accent transition ease-in-out delay-150 hover:-translate-y-1 hover:bg-accent hover:scale-110 duration-300"
             >
               <div className="flex flex-col items-center mx-auto md:min-w-96">
-                <p className="text-xl text-dark font-montserrat font-semibold drop-shadow-2xl shadow-md bg-white bg-opacity-65 p-2 mt-2 mb-4 rounded">
+                <p className="text-xl text-dark font-montserrat font-semibold p-2 mt-2 mb-4 rounded">
                   Go to Components
                 </p>
-                <div className="md:w-40 md:h-40 flex content-center items-center mx-auto">
+                <div className="">
                   <Image
                     src={src}
                     alt="Go to Components Button"
