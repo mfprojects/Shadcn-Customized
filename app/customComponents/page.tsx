@@ -20,7 +20,7 @@ export default function CustomComponents() {
     fontColor: 'url(#gradient)',
     gradientStart: '#cae9fb',
     gradientEnd: '#38B5F8',
-    width: 500,
+    width: 600,
     height: 500,
     bendDegree: -10,
   });
@@ -64,7 +64,7 @@ export default function CustomComponents() {
   return (
     <div className="top-level-div flex flex-col min-h-screen ">
       <div className="flex-grow flex flex-col md:flex-row">
-        <div className="md:w-52 md:min-h-screen md:bg-[#051A39] md:p-4">
+        <div className="md:w-52 md:min-h-screen md:bg-sidebarColor md:p-4">
           <div className="md:sticky md:top-20">
             <div className="hidden md:block divide-y divide-dashed divide-gray-600">
               <h2 className="text-xl font-medium text-white mb-4">
@@ -129,16 +129,16 @@ export default function CustomComponents() {
           <div className="max-w-screen-3xl mx-auto">
             <div className="flex flex-col justify-center  items-center text-center w-full mb-1 md:mb-0">
               <div>
-                <h1 className="flex-auto text-5xl font-bold text-wrap text-center md:text-center text-textDark animate-fade-in-down w-fit px-4 my-8 relative">
+                <h1 className="flex-auto text-5xl font-bold text-wrap text-center md:text-center text-textLight animate-fade-in-down w-fit px-4 my-8 relative">
                   Component Collection
                   <span className="absolute -bottom-1 left-0 right-0 mx-auto h-1 bg-gradient-to-r from-color10 from-10% to-color30 to-100%"></span>
                 </h1>
               </div>
             </div>
 
-            <div className="md:hidden bg-accent p-4 mx-4 mt-12 sm:mt-0 rounded-lg mb-8 divide-y divide-dashed divide-gray-600 border-2 border-color30">
+            <div className="md:hidden shadow-black shadow-sm bg-navColorLight p-4 mx-4 mt-12 sm:mt-0 rounded-lg mb-8 divide-y divide-dashed divide-gray-600 border-2 border-color30">
               <h2
-                className="divide-y-4 text-xl font-medium text-center text-wrap text-textColor2 cursor-pointer"
+                className="divide-y-4 text-xl font-medium text-center text-wrap text-textLight cursor-pointer"
                 onClick={() => setIsCollapsed(!isCollapsed)}
               >
                 Choose component
@@ -151,8 +151,8 @@ export default function CustomComponents() {
                         <button
                           className={`w-full text-left px-4 py-2 rounded ${
                             selectedComponentKey === componentName
-                              ? 'bg-[#6a0dad] text-primary'
-                              : 'text-gray-300 hover:bg-color30/50'
+                              ? 'bg-highlightColor text-textLight font-medium'
+                              : 'text-textLight/50 hover:bg-color30/50'
                           }`}
                           onClick={() => {
                             if (componentName === 'ArchiText') {
@@ -177,7 +177,7 @@ export default function CustomComponents() {
                                 props={archiTextProps}
                                 buttonText="Edit ArchiText Properties"
                                 onSubmit={handleArchiTextPropsChange}
-                                buttonClassName="my-2 w-3/4 text-black bg-[#17a2b8]"
+                                buttonClassName="my-2 w-3/4 text-black bg-highlightColor"
                               />
                             </div>
                           )}
@@ -188,7 +188,7 @@ export default function CustomComponents() {
                                 props={imageBoxProps}
                                 buttonText="Edit ImageBox Properties"
                                 onSubmit={handleImageBoxPropsChange}
-                                buttonClassName="my-2 w-3/4 text-black bg-[#17a2b8]"
+                                buttonClassName="my-2 w-3/4 text-black bg-highlightColor"
                               />
                             </div>
                           )}

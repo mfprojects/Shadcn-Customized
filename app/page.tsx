@@ -9,9 +9,9 @@ export default function Home() {
       <div className="flex flex-col justify-between h-full">
         {/* Hero Section */}
         <section className="mx-auto flex flex-col justify-center text-center pb-4 pt-12 max-w-4xl">
-          <h1 className="text-6xl lg:text-7xl font-montserrat text-center  text-primary animate-fade-in-down">
-            <a className="underline decoration-accent">Com</a>
-            <a className="underline decoration-accent">pLib</a>
+          <h1 className="text-6xl lg:text-7xl font-montserrat text-center  text-textLight animate-fade-in-down">
+            <a className="underline decoration-navColorLight">Comp</a>
+            <a className="underline decoration-accent">Lib</a>
           </h1>
           <div className="flex flex-col justify-center pt-3">
             <h2 className="font-montserrat text-4xl lg:text-4xl font-extralight text-primary">

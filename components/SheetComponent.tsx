@@ -52,7 +52,7 @@ export function SheetComponent<T extends Record<string, any>>({
     <Sheet>
       <SheetTrigger asChild>
         <Button
-          className={`w-full text-left py-4 rounded bg-highlightColor text-white ${buttonClassName} glow-on-hover`}
+          className={`w-full text-left py-4 rounded bg-highlightColor text-black ${buttonClassName} glow-on-hover`}
         >
           {buttonText}
         </Button>
@@ -98,7 +98,7 @@ export function SheetComponent<T extends Record<string, any>>({
               <Button
                 type="button"
                 onClick={handleSaveChanges}
-                className="bg-accent transition ease-in-out delay-150 hover:-translate-y-1 hover:bg-primary hover:scale-110 duration-300"
+                className="bg-primary transition ease-in-out delay-150 hover:-translate-y-1 hover:bg-primary glow-on-hover hover:scale-110 duration-300"
               >
                 Save changes
               </Button>

@@ -47,7 +47,7 @@ const config: Config = {
       colors: {
         secondary: '#F5F5F5',
         primary: '#051937',
-        accent: '#E76F51 ',
+        accent: '#d4a418 ',
         textDark: '#333333',
         textLight: '#EAECE8',
         borderColor: '#7A6BF2',
@@ -61,6 +61,7 @@ const config: Config = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         navbar: '#051937',
+        sidebarColor: '#051A39',
         h1custom: '#F2F2F2',
         h1underline: '#38B5F8',
         oxfordblue: '#061D3F',
