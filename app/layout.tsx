@@ -28,10 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
       <body
-        className={`${montserrat.className} flex flex-col min-h-screen bg-secondary`}
+        className={`${montserrat.className} flex flex-col min-h-screen bg-primary`}
       >
         <Nav />
-        <main className="flex-grow w-full h-full pt-16 bg-secondary">
+        <main className="flex-grow w-full h-full pt-16 bg-primary">
           {children}
         </main>
         <Footer />

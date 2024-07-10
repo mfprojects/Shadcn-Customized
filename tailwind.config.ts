@@ -9,7 +9,7 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      xsplus: '486px',
+      xs: '450px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -45,9 +45,9 @@ const config: Config = {
         '12': '3.6em',
       },
       colors: {
-        secondary: '#CADCFC',
-        primary: '#00246B',
-        accent: '#FFA500',
+        secondary: '#F5F5F5',
+        primary: '#051937',
+        accent: '#E76F51 ',
         textDark: '#333333',
         textLight: '#EAECE8',
         borderColor: '#7A6BF2',

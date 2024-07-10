@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import GreetingCard, { GreetingCardProps } from './GreetingCard';
 import FormCard from './FormCard';
+import Image from 'next/image';
 
 const MainUserForm: React.FC = () => {
   const [view, setView] = useState<'initial' | 'signin' | 'register'>(
@@ -8,10 +9,9 @@ const MainUserForm: React.FC = () => {
   );
 
   const greetingCardProps: GreetingCardProps = {
-    imgPath: '/imgs/shubham-dhage-RJEuYGR5tBg-unsplash.jpg',
+    imgPath: '/imgs/marek-piwnicki-gynUp68f1mI-unsplash.jpg',
     imgAlt: 'Userform',
-    imgWidth: 400,
-    imgHeight: 400,
+    fitStyle: 'cover',
     onSignInClick: () => setView('signin'),
     onRegisterClick: () => setView('register'),
   };

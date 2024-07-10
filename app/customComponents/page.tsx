@@ -9,7 +9,7 @@ import MainUserForm from '@/components/MainUserForm';
 export default function CustomComponents() {
   type ComponentKey = 'UserForm' | 'ArchiText' | 'ImageBox' | 'MainUserForm';
   const [selectedComponentKey, setSelectedComponentKey] =
-    useState<ComponentKey>('UserForm');
+    useState<ComponentKey>('MainUserForm');
   const [isArchiTextSheetVisible, setIsArchiTextSheetVisible] = useState(false);
   const [isImageBoxSheetVisible, setIsImageBoxSheetVisible] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(true); // New state for collapsible list
@@ -198,7 +198,7 @@ export default function CustomComponents() {
                 </ul>
               )}
             </div>
-            <div className="p-0 rounded-md mx-auto w-full max-w-screen-xl">
+            <div className="p-0 rounded-md mx-auto w-full max-w-screen-2xl">
               <ComponentToRender />
             </div>
           </div>

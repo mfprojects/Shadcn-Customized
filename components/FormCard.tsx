@@ -16,8 +16,8 @@ interface FormCardProps {
 }
 
 const FormCard: React.FC<FormCardProps> = ({ formType, onBackClick }) => (
-  <div className="flex flex-col justify-center items-center mx-auto w-full max-w-4xl p-4 bg-secondary">
-    <Card className="w-full max-w-4xl gap-4 p-4 frosted-glass">
+  <div className="flex flex-col justify-center items-center mx-auto w-full p-4 bg-secondary">
+    <Card className="w-full gap-4 p-4 frosted-glass">
       <CardHeader className="">
         <CardTitle>
           {formType === 'signin' ? 'Sign In' : 'Create Account'}
